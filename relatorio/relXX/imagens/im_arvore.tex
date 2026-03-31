@@ -1,0 +1,92 @@
+\documentclass{article}
+
+% Desenho do Diretorio de arvores
+\usepackage[edges]{forest} % Arvore de diretorios
+%=====================
+% Arvore de diretorios
+\definecolor{folderbg}{RGB}{124,166,198}
+\definecolor{folderborder}{RGB}{110,144,169}
+\newlength\Size
+\setlength\Size{4pt} % Aqui muda o tamanho da arvore de diretorios
+\tikzset{%
+  folder/.pic={%
+    \filldraw [draw=folderborder, top color=folderbg!50, bottom color=folderbg] (-1.05*\Size,0.2\Size+5pt) rectangle ++(.75*\Size,-0.2\Size-5pt);
+    \filldraw [draw=folderborder, top color=folderbg!50, bottom color=folderbg] (-1.15*\Size,-\Size) rectangle (1.15*\Size,\Size);
+  },
+  file/.pic={%
+    \filldraw [draw=folderborder, top color=folderbg!5, bottom color=folderbg!10] (-\Size,.4*\Size+5pt) coordinate (a) |- (\Size,-1.2*\Size) coordinate (b) -- ++(0,1.6*\Size) coordinate (c) -- ++(-5pt,5pt) coordinate (d) -- cycle (d) |- (c) ;
+  },
+}
+\forestset{%
+  declare autowrapped toks={pic me}{},
+  pic dir tree/.style={%
+    for tree={%
+      folder,
+      font=\ttfamily,
+      grow'=0,
+    },
+    before typesetting nodes={%
+      for tree={%
+        edge label+/.option={pic me},
+      },
+    },
+  },
+  pic me set/.code n args=2{%
+    \forestset{%
+      #1/.style={%
+        inner xsep=2\Size,
+        pic me={pic {#2}},
+      }
+    }
+  },
+  pic me set={directory}{folder},
+  pic me set={file}{file},
+}
+
+
+
+\begin{document}
+
+\begin{figure}[!htp]
+  \centering
+  \begin{forest}
+  pic dir tree,
+  where level=0{}{% folder icons by default; override using file for file icons
+    directory,
+  },
+  [relatorio-estexp
+    [index.Rmd, file
+    ]
+    [index.html, file
+    ]
+    [logo.html, file
+    ]
+    [imagens
+    ]
+    [info
+    ]
+    [relatorios
+      [rel01
+        [index.Rmd, file
+        ]
+        [index.html, file
+        ]
+      ]
+      [rel02
+        [index.Rmd, file
+        ]
+        [index.html, file
+        ]
+      ]
+      [...
+      ]
+    ]
+  ]
+  \end{forest}
+  %\caption{Estrutura básica de um pacote R.}\label{fig:estpacR}
+\end{figure}
+
+\end{document}
+
+
+

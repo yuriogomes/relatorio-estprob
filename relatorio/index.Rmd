@@ -1,0 +1,167 @@
+---
+title: "Relatórios da Disciplina Estatística e Probabilidade (UFSJ)"
+author: "[Ben Dêivide](https://bendeivide.github.io) | [DEFIM/UFSJ](https://ufsj.edu.br)"
+date: "`r format(Sys.time(), '%d %B, %Y, %Hh:%Mmin:%Sseg')`"
+toc-title: "Sumário"
+output:
+  bookdown::html_document2: 
+    anchor_sections: true
+#   css: style.css
+    theme: bootstrap
+# https://bookdown.org/yihui/rmarkdown/appearance-and-style-1.html
+    highlight: kate
+    toc: yes
+    number_sections: yes
+    includes:
+      in_header: logo.html
+  pdf_document:
+    
+    toc: yes
+    number_sections: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+--- 
+
+# Mais informações sobre mim
+
+Acesse: [Yuri de Oliveira Gomes](www.linkedin.com/in/yuri-oliveira-gomes-863425301){target="_blank"}
+
+# Página dos alunos da disciplina
+
+- Acesse: [Página dos alunos da disciplina Estatística e probabilidade](https://bendeivide.github.io/courses/estexp/estexp2025.1/#relat%C3%B3rio-dos-alunos){target="_blank"}
+
+# Visão geral sobre os relatórios {.tabset .tabset-fade}
+
+Este projeto está disponível em <https://github.com/bendeivide/relatorio-estprob.git>.
+
+## O que é necessário?
+
+- Instalar o R: 
+  - Windows: <https://cran.r-project.org/bin/windows/base/>
+    - rtools: <https://cran.r-project.org/bin/windows/Rtools/>
+  - MAC: <https://cran.r-project.org/bin/macosx/>
+  - Linux: <https://cran.r-project.org/bin/linux/>
+- Instalar o RStudio: <https://www.rstudio.com/products/rstudio/download/>
+- Instalar o Git: <https://git-scm.com/downloads>
+- Fazer o cadastro no GitHub:
+  - Crie um cadastro em: <https://github.com/signup?source=login>
+  - Guarde o e-mail utilizado e o seu nome de usuário. Por exemplo, em meu github:
+    - Nome: *bendeivide*
+      - O seu pode ser encontrado no canto superior direito de sua imagem. Ao clicar na seta ao lado, aparecerá um menu, e a primeira informação é: "*Signed in as nome_usuario*". Esse é o seu nome de usuário ("*nome_usuario*")
+    - E-mail: *ben.deivide@gmail.com*
+      - Ainda no canto superior direito de sua imagem, no github, ao clicar na seta ao lado, tem uma opção chamada "*Settings*", clique nessa opção, e aparecerá a página de configurações. Na lateral direita, procure por: *Access* > *Emails* > *Primary email address*. Pronto, este é o seu e-mail!
+- Instalar Pacotes (No R): 
+
+```{r eval=FALSE}
+pkgs <- c("rmarkdown", "knitr", "bookdown", "tinytex", "postcards", "usethis", "gitcreds", "quarto")
+install.packages(pkgs)
+```
+
+- Autenticação e sincronização do RStudio com o Github
+
+```{r eval=FALSE}
+# Configurando o nome e email do github
+usethis::use_git_config(user.name = "YourName", user.email = "your@mail.com")
+# gerando um token
+usethis::create_github_token() 
+# inserindo o token no arquivo '.Renviron'
+usethis::edit_r_environ()
+## armazene seu token na varivel GITHUB_PAT:
+## GITHUB_PAT=ghp_XXXXXXXXXXXXXXXXXXXXXX
+## após inserir esta linha de comando, finalize o arquivo
+## acrescentando uma nova linha!!!!
+
+# Criar localmente o projeto git
+usethis::use_git()
+# Subi o projeto local ao github
+usethis::use_github()
+```
+
+
+## Diretório/Repositório
+
+A estrutura base de nossos relatórios deve seguir a seguinte estrutura de diretório:
+
+- Usando RStudio -> GitBash (Via terminal)
+  - Configure o terminal da seguinte forma:
+    - *RStudio* > *Tools* > *Global Options...* > *Terminal* > *General* > *Shell* > *New Terminal open with*: *Git Bash* > *Apply* (Botão)
+- Crie um repositório no [GitHub](https://github.com) com o nome `relatorio-estexp`;
+- Ao ser criado o repositório GitHub, precisamos copiar o https desse repositório:
+  - Entre no repositório > Procure o botão "Code" > Copie o __HTTPS__ . Se considerarmos o nome do repositório como "relatorio-estexp" seria isso: `https://github.com/<seunome_github>/relatorio-estexp.git`
+- Clone no RStudio esse repositório em:
+  - *File > New Project... > Version Control > Git > Repository URL*:
+  - Insira o *https* do repositório Git;
+  - Escolha o diretório onde esse repositório será clonado em seu computador em: "*Create project as subdirectory of*". Lembre-se de escolher diretórios (pastas) com nomes sem acento, com espaços. De preferência, crie uma pasta no disco C com no "repos", isto é, `C:/repos`^[Pensando no SO Win.]. Caminhos longos dificultam a renderização do projeto. Experiência pessoal!
+
+---
+
+## GitHub/RStudio
+
+Para sincronizarmos as alterações do nosso repositório local com o repositório GitHub, faremos a sequência de comandos:
+
+- Usando o *Git Bash* (Pela aba *Terminal* no RStudio)
+  - Adicionar todas as alterações no projeto (localmente)
+  - Comentar a alteração (localmente)
+  - Enviar as alterações para o respositório `https://github.com/seunome_github/relatorio-estexp`
+  - Nessa ordem, temos os comandos:
+  
+```github
+$ git add .
+$ git commit -m "Comentário a ser inserido!"
+$ git push
+```
+Podemos também fazer esses passos por meio de botões no RStudio. No terceiro quadrante, procure pela aba *Git*, depois o botão *Commit*. Ao clicar, abrirá uma nova janela. No seu lado esquerdo será apresentado todos os arquivos alterados. Selecione os arquivos que deseja subi para o GitHub. Ao selecionar, no seu lado direito, haverá um espaço, em *commit message*, para realizar o comentário, vulgarmente chamamos *commitar*. Feito isso, clique no botão *commit*, e depois no botão *push*. Pronto, alterações enviadas!
+
+---
+
+## Estrutura do repositório
+
+A estrutura de nosso projeto será da seguinte forma:
+
+
+```{r echo=FALSE, fig.align='center', fig.cap='', out.width='40%'}
+knitr::include_graphics('imagens/im_arvore.png')
+```
+
+- `relatorio-estexp/index.html` é a página principal. Sempre use `index.Rmd` para renderizar a página em HTML;
+- `images` é o subdiretório que criamos algumas imagens. Para as imagens necessárias nos relatórios, insira nos diretórios dos relatórios;
+- `index.html` é o arquivo que representa a página das informações adicionais de cada aluno. Sempre use `index.Rmd` para renderizar a página em HTML. Caso deseje alterar a foto `logo.png` por uma sua, insira a imagem na raiz do projeto, a respectiva imagem, renomeando-a por `logo.png`, lembre-se da extensão da imagem, `.png`;- Todos os subdiretórios `./rel0X` representam os locais para desenvolver os relatórios. Para `X = 1`, isto é, `./rel01`, temos o desenvolvimento do relatório 1, e assim sucessivamente. Para a criação de mais relatórios, copie um desses subdiretórios como modelo para o desenvolvimento do próximo. Por exemplo, se criarmos o relatório 03, copie um dos subdiretórios referidos, e renomei-o como `./rel03`. Sempre use `index.Rmd` para renderizar a página em HTML. 
+
+## Implantação da página
+
+- Uma vez projeto local no github, vamos ativar a página:
+  - No repositório `relatorio-estexp`, acesse configurações (*settings*);
+  - Em geral (*general*) > código e automação (*code and automation*) > Página (*Pages*);
+  - Em construção e implantação (*Build and deployment*) da página, acesse a *branch*;
+  - no botão *none* escolha (*master* ou *main*) de acordo como está o seu projeto;
+  - posteriormente, o diretório será *roots*, e clique em salvar (*save*);
+  - retorne ao diretório do projeto no github (`seunome_github/relatorio-estexp`);
+  - no lado direto inferior da página aparecerá a opção *Deployments* (Caso não apareça, espere um pouco ou limpe o *cache* do seu navegador), clique-o! (Figura \@ref(fig:deploy01));
+  - Agora verifique a página e veja se está tudo certo! (Figura \@ref(fig:deploy02));
+  - Pronto! Estando tudo certo, a página pode ser acessada com o link: `https://seunome.github.io/relatorio-estexp`. Bons estudos!
+
+```{r deploy01, echo=FALSE, fig.align='center', fig.cap='Construindo a página.', out.width='40%'}
+knitr::include_graphics('imagens/deployments.png')
+```
+  
+  
+```{r deploy02, echo=FALSE, fig.align='center', fig.cap='Verificando a página.', out.width='40%'}
+knitr::include_graphics('imagens/deployments02.png')
+```
+  
+
+---
+
+# Relatórios {#relatorio}
+
+Para *linkar* os relatórios basta usar o código (Exemplo Relatório 01):
+
+```
+- [Relatorio 01 (Insira a data)](rel01/index.html){target="_blank"}
+```
+Relatórios desenvolvidos:
+
+- [Relatório 01 (30/03/2026)](rel01/index.html){target="_blank"}

@@ -1,0 +1,50 @@
+---
+title: "Inserindo_imagem"
+author: "Ben Deivide"
+date: '2022-04-28'
+output: bookdown::html_document2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Como inserir uma imagem via `knitr` {#insertimg}
+
+A Figura \@ref(fig:fig1) é apresentada a seguir.
+
+
+```{r fig1, out.width="50%", fig.align='center', fig.cap="Logo da RBras 2017!"}
+knitr::include_graphics("rbras2017.png")
+```
+
+Para isso nós usamos o comando `\@ref(fig:fig1)`, devido ao *label* no *chunk* ser `fig1`. Vale lembrar que esse resultado só é possível com o pacote [bookdown](https://pkgs.rstudio.com/bookdown/), usando no cabeçalho o *output*: `output: bookdown::html_document2`. O chunk utilizado foi:
+
+````r
+
+`r ''````{r fig1, out.width="50%", fig.align='center', fig.cap="Logo da RBras 2017!"}
+knitr::include_graphics("rbras2017.png")
+```
+
+````
+
+
+O cabeçalho (YAML) ficou dessa forma:
+
+```yaml
+
+title: "Inserindo_imagem"
+author: "Ben Deivide"
+date: '2022-04-28'
+output: bookdown::html_document2
+
+```
+
+
+
+
+## Usando hyperlinks
+
+Para chamar a seção anterior, eu faço isso [Seção 1](#insertimg), isto é, na seção eu crio a *label* com: ` # Como inserir uma imagem via knitr {#insertimg} `, e depois uso a referência: `[Seção 1](#insertimg)` 
+
+

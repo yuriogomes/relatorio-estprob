@@ -1,0 +1,16 @@
+---
+title: "Yuri de Oliveira Gomes"
+image: "yuri.jpeg"
+links:
+  - label: GitHub
+    url: "https://github.com/yuriogomes"
+  - label: Email
+    url: "mailto:yuriogomes04@gmail.com"
+  - label: Relatórios
+    url: "./relatorio/index.html"
+output:
+  postcards::jolla
+---
+ 
+Sou estudante de Engenharia Química com experiência em análise de dados e melhoria contínua em ambiente industrial. Atuei em uma multinacional na área de excelência operacional, desenvolvendo indicadores, dashboards em Power BI e análises voltadas à otimização de processos.
+
