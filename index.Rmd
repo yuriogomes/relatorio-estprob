@@ -8,9 +8,10 @@ links:
     url: "mailto:yuriogomes04@gmail.com"
   - label: Relatórios
     url: "./relatorio/index.html"
+  - label: Linkedin
+    url: "https://www.linkedin.com/in/yuri-oliveira-gomes-863425301"
 output:
   postcards::jolla
 ---
- 
-Sou estudante de Engenharia Química com experiência em análise de dados e melhoria contínua em ambiente industrial. Atuei em uma multinacional na área de excelência operacional, desenvolvendo indicadores, dashboards em Power BI e análises voltadas à otimização de processos.
 
+Sou estudante de Engenharia Química com experiência em análise de dados e melhoria contínua em ambiente industrial. Atuei em uma multinacional na área de excelência operacional, desenvolvendo indicadores, dashboards em Power BI e análises voltadas à otimização de processos.

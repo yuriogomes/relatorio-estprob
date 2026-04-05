@@ -1,12 +1,12 @@
 ---
 # Só mude aqui!!!!
 author: "Yuri de Oliveira Gomes"
-title: "Relatório 01 - Descrição do Experimento da Catapulta"
+title: "Relatório 01 - Curso R Básico 2024"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
 link-citations: true
 csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
-subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+subtitle: "<a href='https://bendeivide.github.io/courses/ear/rbasico/' target='_blank'>Curso R Básico 2024</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
 include-before-body: header.html
 date: now
 date-format: "DD/MM/YYYY, HH:mm"
@@ -16,7 +16,6 @@ format:
     toc: true
     number-sections: true
     theme: bootstrap
-    #css: styles.css
     code-fold: true
     code-tools: true
 execute:
@@ -25,102 +24,628 @@ execute:
   message: false
 ---
 
-
 ## 📌 Introdução
 
-Descreva o contexto da prática e sua importância.
+Este relatório tem como objetivo registrar o aprendizado obtido ao longo das 26 aulas do **Curso R Básico 2024**, ministrado pelo Prof. Ben Dêivide de Oliveira Ferreira (DEFIM/CAP/UFSJ). O curso apresenta, de forma estruturada e progressiva, os fundamentos da linguagem R — desde a apresentação do ambiente de trabalho até conceitos avançados como criação de funções, pacotes e interface com outras linguagens.
 
-> Exemplo: análise da variabilidade em experimentos físicos utilizando uma catapulta.
+O R é uma linguagem de programação voltada para computação estatística e visualização de dados, amplamente utilizada em pesquisa científica, análise de dados e engenharia. Este relatório sintetiza os principais tópicos abordados em cada aula, servindo como registro de estudo e consulta futura [@Rbasico2022].
 
-
+---
 
 ## 🎯 Objetivos
 
 ### Objetivo geral
 
-Descrever o objetivo principal da prática.
+Realizar uma introdução à linguagem R, fundamentada nas 26 aulas do Curso R Básico 2024, compreendendo desde os conceitos iniciais até a preparação para o nível intermediário.
 
 ### Objetivos específicos
 
-- Coletar dados experimentais  
-- Aplicar estatística descritiva  
-- Construir gráficos  
-- Interpretar resultados  
+- Conhecer a página, materiais e estrutura do curso
+- Compreender os três princípios fundamentais do R (objeto, função e interface)
+- Familiarizar-se com o ambiente R e a IDE RStudio
+- Dominar as principais estruturas de dados da linguagem R
+- Aprender a criar funções, utilizar pacotes e adotar boas práticas de programação
+- Preparar-se para o Curso R Intermediário
 
 ---
 
-## 📚  Fundamentação Teórica
+## 📚 Fundamentação Teórica
 
-Apresente os conceitos principais:
+O R é uma linguagem e ambiente de programação desenvolvido por Ross Ihaka e Robert Gentleman na Universidade de Auckland, Nova Zelândia, na década de 1990, como uma implementação da linguagem S [@Rbasico2022]. Sua principal característica é ser *open source* e altamente extensível por meio de pacotes disponíveis no CRAN (*Comprehensive R Archive Network*).
 
-- Média
-- Variância
-- Desvio padrão
-- Amostragem
+A linguagem é estruturada em torno de três princípios centrais que permeiam todo o curso:
 
-$$
-\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-$$
+- **Princípio do Objeto:** tudo em R é (ou pode ser tratado como) um objeto
+- **Princípio da Função:** toda ação em R é realizada por meio de funções
+- **Princípio da Interface:** o R se comunica com o sistema operacional, outras linguagens e fontes de dados externas
 
 ---
 
 ## ⚙️ Metodologia
 
-::: {.callout-note}
-Descreva como o experimento foi realizado.
-:::
-
-- Materiais utilizados  
-- Procedimento  
-- Número de repetições  
+- **Plataforma:** Curso EAR — R Básico 2024 (bendeivide.github.io)
+- **Carga horária por aula:** 50 minutos
+- **Total de aulas:** 26 (Aula 00 a Aula 25)
+- **Materiais:** Slides, podcasts, videoaulas, livro R Básico e exercícios propostos
 
 ---
 
-## 🔍 Resultados e Discussão
+## 🔍 Resumo das Aulas
 
-Apresente e interprete os resultados obtidos a partir dos dados coletados.
+### Aula 00 — Apresentação do Curso
 
-- Descreva os principais resultados numéricos (média, variabilidade, etc.).
-- Comente o comportamento dos dados observados nos gráficos.
-- Indique se há presença de valores discrepantes (outliers).
-- Avalie se os dados apresentam simetria ou tendência.
+A Aula 00 teve caráter introdutório e organizacional, com os seguintes pontos:
 
-Em seguida, discuta os resultados à luz dos conceitos teóricos:
+- **Página do curso:** apresentação da plataforma onde estão disponibilizados todos os materiais, videoaulas e recursos do Curso R Básico 2024
+- **Datas e horários das aulas:** detalhamento do calendário do curso, com os horários previstos para cada encontro
+- **Material de apoio:** apresentação dos recursos disponíveis ao estudante, incluindo slides, podcasts, videoaulas, livro R Básico e exercícios propostos
 
-- Os resultados estão de acordo com o esperado?
-- Há grande variabilidade? O que isso significa no contexto do experimento?
-- Quais fatores podem ter influenciado os resultados?
-- Existem possíveis fontes de erro experimental?
+---
 
-Procure não apenas descrever, mas **interpretar os dados**.
+### Aula 01 — Entendendo o Curso EAR: R Básico
 
-### 💬 Exemplo de como citar uma referência bibliográfica
+Esta aula apresentou a base conceitual que orienta todo o curso. O ponto central foi a introdução dos **três princípios fundamentais do R**:
 
-Depois de inserido as informaçõe no arquivo **referencias.bib**, use:
+- **Princípio do Objeto:** em R, tudo é um objeto — dados, resultados, funções e até ambientes são objetos manipuláveis
+- **Princípio da Função:** toda ação executada no R ocorre por meio de funções, sejam elas nativas ou criadas pelo usuário
+- **Princípio da Interface:** o R se comunica com o sistema operacional e pode importar e exportar dados de diversas fontes e formatos
 
-- Segundo @Rbasico2022
-- Tudo é um objeto em R [@Rbasico2022]
+Esses três princípios foram associados à **visão geral do Ambiente R**, fornecendo um mapa conceitual para o aprendizado ao longo do curso. A aula também incluiu orientações práticas sobre a **instalação do R e do RStudio**.
 
-### 📊  Análise de Dados
+---
+
+### Aula 02 — Passos Iniciais para a Utilização do R e do RStudio
+
+A aula apresentou os primeiros passos para utilizar o R no dia a dia:
+
+- **Descrição do R e do RStudio:** o R é a linguagem/ambiente de programação; o RStudio é uma IDE (*Integrated Development Environment*) que facilita seu uso
+- **Interface do R:** apresentação do R GUI nativo, com console e menu básico
+- **Interface do RStudio:** apresentação dos quatro painéis principais — Editor, Console, Environment/History e Files/Plots/Packages/Help
+- **RStudio como facilitador:** demonstração de como a IDE torna a experiência de programação mais produtiva com recursos como autocompletar, visualização de objetos e gerenciamento de projetos
+
+---
+
+### Aula 03 — História do R
+
+A aula traçou a trajetória histórica da linguagem R:
+
+- **Estudos iniciais:** Robert Gentleman e Ross Ihaka iniciaram o desenvolvimento do R na Universidade de Auckland (Nova Zelândia) no início dos anos 1990
+- **Importância da linguagem S:** o R foi concebido como uma implementação livre da linguagem S, desenvolvida por John Chambers nos Bell Labs
+- **Datas importantes:**
+
+| Ano | Marco |
+|-----|-------|
+| 1976 | Criação da linguagem S nos Bell Labs |
+| 1991 | Início do desenvolvimento do R por Ihaka e Gentleman |
+| 1993 | Primeiro anúncio público do R |
+| 1995 | R lançado como software livre (licença GNU GPL) |
+| 1997 | Criação do CRAN e do R Core Team |
+| 2000 | Lançamento oficial do R versão 1.0.0 |
+
+- **R Core Team:** grupo de desenvolvedores responsável pela manutenção e evolução do R
+- **CRAN:** repositório oficial de pacotes do R, garantindo qualidade e disponibilidade global
+- **Origem do RStudio:** fundado em 2009 por J.J. Allaire, com o objetivo de fornecer ferramentas de produtividade para a comunidade R
+
+---
+
+### Aula 04 — Como o R Trabalha?
+
+A aula complementou a caracterização do R e seu funcionamento interno, retomando e aprofundando os três princípios apresentados na Aula 01:
+
+- **Princípio do Objeto:** como os objetos são armazenados na memória RAM durante uma sessão R
+- **Princípio da Função:** como o R interpreta e executa funções a partir de comandos digitados no console
+- **Princípio da Interface:** como o R interage com o sistema operacional para leitura e escrita de arquivos
+
+A aula encerrou com um **exemplo ilustrativo** que integrou os três princípios na prática, mostrando o fluxo completo de uma análise simples no R.
+
+---
+
+### Aula 05 — Comandos no R e Ambiente Global
+
+A aula abordou os fundamentos da interação do usuário com o R:
+
+- **Console e Prompt de comando:** o console é o canal de comunicação direta com o R; o prompt (`>`) indica que o R está pronto para receber um novo comando
+- **Nomes sintáticos, não sintáticos e palavras reservadas:** regras para nomear objetos no R — nomes válidos (sintáticos), nomes que exigem uso de crases (não sintáticos) e palavras reservadas que não podem ser usadas como nomes (`if`, `else`, `TRUE`, `FALSE`, etc.)
+- **Comandos elementares:**
+  - *Expressões:* comandos que avaliam e retornam um resultado sem armazenar (ex.: `2 + 2`)
+  - *Atribuições:* comandos que armazenam o resultado em um objeto (ex.: `x <- 10`)
+- **Chamada e correção de comandos com o RStudio:** uso das teclas de atalho e do histórico de comandos para editar e reexecutar instruções
+- **Ambiente Global:** o *Global Environment* é um dos objetos mais importantes do R — o espaço de memória onde os objetos criados pelo usuário são armazenados durante a sessão
 
 ```{r}
-distancia <- c(10.2, 9.8, 10.5, 10.1, 9.9, 10.3)
-distancia
+# Expressão: avalia e exibe, mas não armazena
+2 + 2
+
+# Atribuição: armazena o resultado no objeto x
+x <- 10
+x
+
+# Verificando objetos no ambiente global
+ls()
 ```
 
-## 🧠 Considerações finais
+---
 
-Apresente uma síntese dos principais pontos observados no experimento.
+### Aula 06 — Arquivos `.RData` e `.Rhistory`
 
-- Retome o objetivo da prática e indique se ele foi alcançado.
-- Destaque os principais aprendizados obtidos.
-- Comente brevemente sobre a qualidade dos dados coletados.
-- Sugira possíveis melhorias no procedimento experimental.
+A aula apresentou dois arquivos gerados pelo R para persistência de dados entre sessões:
 
-Evite repetir apenas os resultados; foque nas **conclusões e reflexões** sobre a prática realizada.
+- **Finalidade do `.RData`:** salva todos os objetos presentes no Ambiente Global ao encerrar uma sessão, permitindo restaurar o estado do trabalho ao reabrir o R
+- **Finalidade do `.Rhistory`:** registra o histórico de todos os comandos executados durante a sessão, funcionando como um log de atividades
+- **Como criar esses arquivos:** ao encerrar o R, ele pergunta se deseja salvar o workspace — ao confirmar, ambos os arquivos são gerados no diretório de trabalho. Também é possível criá-los manualmente com `save.image()` e `savehistory()`
+- **Exemplos de aplicação:** demonstração prática de salvar, fechar, reabrir o R e verificar que objetos e histórico foram preservados
 
-## Aprenda Quarto
+```{r}
+# Salvando manualmente o ambiente
+# save.image("meu_ambiente.RData")
 
-Acesse [Quarto](https://quarto.org/).
+# Carregando um ambiente salvo
+# load("meu_ambiente.RData")
+
+# Salvando o histórico manualmente
+# savehistory("meu_historico.Rhistory")
+```
+
+---
+
+### Aula 07 — Criando e Salvando um Script
+
+A aula introduziu o script como ferramenta fundamental para organizar e reproduzir análises:
+
+- **O que é um Script?** Um arquivo de texto com extensão `.R` que contém uma sequência de comandos R, permitindo que o código seja reutilizado, compartilhado e reproduzido
+- **Como criar um Script:**
+  - *Usando o R GUI:* menu File → New Script
+  - *Usando o RStudio:* menu File → New File → R Script (ou `Ctrl + Shift + N`)
+- **Salvando um Script:** `Ctrl + S` no RStudio; recomenda-se usar nomes descritivos e sem espaços (ex.: `aula07_script.R`)
+- **Diretório de trabalho:** pasta padrão onde o R lê e salva arquivos — verificado com `getwd()` e alterado com `setwd()`
+
+```{r}
+# Verificando o diretório de trabalho atual
+getwd()
+
+# Exemplo de script básico comentado
+a <- 5
+b <- 3
+
+soma    <- a + b
+produto <- a * b
+
+cat("Soma:", soma, "\n")
+cat("Produto:", produto, "\n")
+```
+
+---
+
+### Aula 08 — Objetos e Estrutura de Dados
+
+Esta aula aprofundou o Princípio do Objeto e apresentou como o R organiza seus dados:
+
+- **O que é um objeto?** Qualquer entidade armazenada na memória do R — desde um simples número até uma função complexa
+- **Tipos de objetos:** o R possui tipos básicos (`typeof`) que definem a natureza dos dados: `double`, `integer`, `complex`, `character`, `logical` e `raw`
+- **Atributos e metadados:**
+  - *Atributos intrínsecos:* `typeof` (tipo) e `length` (comprimento) — presentes em todo objeto
+  - *Classe (`class`):* atributo que define como o objeto é tratado por funções genéricas
+  - *Demais atributos:* `dim`, `names`, `dimnames`, entre outros
+- **Estruturas de dados geradas pelos atributos:** um vetor com atributo `dim` torna-se uma matriz; com `class = "data.frame"`, torna-se um quadro de dados
+- **Principais estruturas:** vetor, matriz, array, lista e data frame
+
+
+```{r}
+x <- c(1.5, 2.5, 3.5)
+typeof(x)
+length(x)
+attributes(x)
+class(x)
+```
+
+---
+
+### Aula 09 — Vetores
+
+O vetor é a estrutura de dados mais fundamental do R:
+
+- **Vetores atômicos:** armazenam elementos de um único tipo (`logical`, `integer`, `double`, `character`, `complex`, `raw`)
+- **Vetores escalares:** vetores de comprimento 1 — em R, não existe tipo escalar separado; um único número é um vetor de comprimento 1
+- **Vetores longos:** vetores com múltiplos elementos, criados com `c()`
+- **Manipulando vetores:**
+  - *Indexação:* acesso por posição (`v[i]`), por nome (`v["nome"]`) ou por condição lógica (`v[v > 2]`)
+  - *Aritmética:* operações aplicadas elemento a elemento (vetorização automática)
+  - *Outras operações:* `length()`, `rev()`, `sort()`, `which()`, entre outras
+
+```{r}
+v <- c(10, 20, 30, 40, 50)
+
+# Indexação
+v[3]
+v[v > 25]
+
+# Aritmética vetorizada
+v * 2
+v + c(1, 2, 3, 4, 5)
+```
+
+---
+
+### Aula 10 — Matrizes
+
+A aula apresentou as matrizes como extensão direta dos vetores:
+
+- **Relação com vetores:** uma matriz é um vetor acrescido do atributo `dim`
+- **Atributo `dim`:** vetor de comprimento 2 — `c(nlinhas, ncolunas)` — que transforma um vetor unidimensional em uma estrutura bidimensional
+
+```{r}
+# Criando uma matriz via matrix()
+M <- matrix(1:9, nrow = 3, ncol = 3)
+M
+
+# Criando via atributo dim diretamente
+v <- 1:9
+dim(v) <- c(3, 3)
+v
+
+typeof(M)
+class(M)
+```
+
+---
+
+### Aula 11 — Arrays (Matrizes Multidimensionais)
+
+Os arrays generalizam o conceito de matriz para três ou mais dimensões:
+
+- **Relação com vetores:** um array é um vetor com atributo `dim` de comprimento 3 ou mais
+- **Atributo `dim` para arrays:** vetor de comprimento 3 composto por:
+  - Número de linhas
+  - Número de colunas
+  - Número de matrizes (camadas)
+
+```{r}
+# Array tridimensional: 3 linhas x 3 colunas x 2 matrizes
+A <- array(1:18, dim = c(3, 3, 2))
+
+# Acessando a primeira camada
+A[, , 1]
+
+# Acessando elemento específico [linha 2, coluna 3, camada 2]
+A[2, 3, 2]
+```
+
+---
+
+### Aula 12 — Listas
+
+As listas representam uma estrutura de dados mais complexa e flexível do que os vetores:
+
+- **Objeto do tipo lista:** criado com `list()`, é um tipo de objeto mais complexo do que um vetor
+- **Heterogeneidade:** pode conter simultaneamente vetores, funções, expressões e outros tipos
+- **Objetos recursivos:** listas podem conter outras listas dentro de si, formando estruturas hierárquicas
+
+```{r}
+minha_lista <- list(
+  nome     = "Yuri",
+  notas    = c(8.5, 9.0, 7.8),
+  aprovado = TRUE,
+  info     = list(curso = "Engenharia", periodo = 10)
+)
+
+minha_lista$nome
+minha_lista[["notas"]]
+minha_lista[[4]]$curso
+```
+
+---
+
+### Aula 13 — Quadro de Dados (Data Frame)
+
+O data frame é a estrutura tabular mais utilizada em análise de dados no R:
+
+- **Objeto do tipo lista:** internamente, um data frame é uma lista em que cada elemento é um vetor de mesmo comprimento, representando uma coluna
+- **Atributo `class = "data.frame"`:** faz com que funções genéricas o tratem como uma tabela estruturada
+
+```{r}
+dados <- data.frame(
+  nome     = c("Ana", "Carlos", "Maria"),
+  idade    = c(22, 25, 30),
+  nota     = c(8.5, 9.2, 7.8),
+  aprovado = c(TRUE, TRUE, TRUE)
+)
+
+class(dados)
+typeof(dados)   # internamente é uma lista
+str(dados)
+summary(dados)
+```
+
+---
+
+### Aula 14 — Importando e Exportando Dados
+
+A aula explorou o Princípio da Interface aplicado à comunicação com fontes de dados externas:
+
+- **Princípio da Interface:** o R é capaz de se comunicar com diferentes formatos de arquivo, tornando a importação e exportação parte central do fluxo analítico
+- **Como organizar um banco de dados:** uma observação por linha, uma variável por coluna, sem células mescladas
+- **Como importar dados para o R:**
+  - `read.table()` — arquivos `.txt` com separadores configuráveis
+  - `read.csv()` — arquivos `.csv` (separador vírgula)
+  - `read.csv2()` — padrão brasileiro (separador ponto-e-vírgula)
+- **Como exportar dados do R:**
+  - `write.table()` — exporta para `.txt`
+  - `write.csv()` — exporta para `.csv`
+
+```{r}
+# Arquivos utilizados na aula (exemplo de uso):
+# alfafa   <- read.table("alfafa.txt",      header = TRUE)
+# datast   <- read.table("datast1980.txt",  header = TRUE)
+# producao <- read.csv("producao.csv",      header = TRUE)
+
+# Demonstração com dados criados diretamente
+dados <- data.frame(x = 1:5, y = c(2.1, 3.4, 1.8, 4.5, 3.2))
+# write.csv(dados, "saida.csv", row.names = FALSE)
+head(dados)
+```
+
+---
+
+### Aula 15 — Funções
+
+A aula aprofundou o Princípio da Função, apresentando as funções como objetos de primeira classe em R:
+
+- **O que é uma função em R?** Um objeto que recebe argumentos, executa operações e retorna um resultado
+- **Tipos de funções:**
+  - *Primitivas:* implementadas em C, alta performance (ex.: `sum()`, `length()`)
+  - *Closure:* funções R puras, com corpo, argumentos e ambiente definidos
+  - *Especiais:* operadores (`+`, `<-`) com comportamento diferenciado
+- **Componentes de uma função (nível de usuário):** argumentos (`formals()`), corpo (`body()`) e ambiente (`environment()`)
+- **Funções em pacotes:** funções organizadas em pacotes que estendem as capacidades do R
+- **Chamada de funções:** passagem de argumentos por posição ou por nome
+
+```{r}
+formals(mean)
+body(mean)
+
+# Chamada por posição vs. por nome
+round(3.14159, 3)
+round(x = 3.14159, digits = 3)
+```
+
+---
+
+### Aula 16 — Estruturas de Controle
+
+As estruturas de controle direcionam o fluxo de execução de um programa:
+
+- **Condicionais:**
+  - `if()` / `else`: executa um bloco se a condição for verdadeira; bloco alternativo se for falsa
+  - `ifelse()`: versão vetorizada do `if/else`
+- **Funções de loop:**
+  - `for()`: repete para cada elemento de um vetor ou lista
+  - `while()`: repete enquanto uma condição for verdadeira
+  - `repeat`: repete indefinidamente até encontrar um `break`
+
+```{r}
+# if/else
+x <- 15
+if (x > 10) {
+  cat("x é maior que 10\n")
+} else {
+  cat("x é menor ou igual a 10\n")
+}
+
+# ifelse vetorizado
+valores <- c(3, 7, 12, 5, 18)
+ifelse(valores > 10, "grande", "pequeno")
+
+# for
+for (i in 1:4) cat("Iteração:", i, "\n")
+
+# while
+k <- 1
+while (k <= 3) {
+  cat("Contagem:", k, "\n")
+  k <- k + 1
+}
+```
+
+---
+
+### Aula 17 — Como Criar Funções
+
+A aula detalhou a criação de funções personalizadas no R:
+
+- **Criação com `function()`:** sintaxe básica para definir uma função
+- **Estrutura de uma função:**
+  - *Argumento:* entradas da função; podem ter valores padrão
+  - *Corpo:* bloco de instruções executadas
+  - *Ambiente:* onde a função foi criada; define o escopo de busca de objetos
+- **Formas de chamada:**
+  - *Aninhada:* funções chamadas dentro de outras
+  - *Intermediária:* resultado armazenado em objeto antes de passar à próxima função
+  - *Pipe (`|>`):* encadeamento legível de funções
+- **Ordenamento de argumentos:** R permite passagem por posição ou por nome
+- **Objeto `...`:** permite número variável de argumentos, repassados a outras funções
+- **Escopo léxico:** o R busca objetos primeiro no ambiente próprio da função, depois no ambiente envolvente
+  - *Ambiente envolvente:* onde a função foi criada
+  - *Ambiente de execução:* criado a cada chamada e destruído ao término
+- **Novo começo:** a cada chamada, a função começa do zero, sem memória de execuções anteriores
+
+```{r}
+# Função com argumento padrão
+saudacao <- function(nome, prefixo = "Olá") {
+  cat(prefixo, nome, "!\n")
+}
+saudacao("Yuri")
+saudacao("Prof. Ben", prefixo = "Bom dia,")
+
+# Uso do objeto ...
+minha_soma <- function(...) sum(c(...))
+minha_soma(1, 2, 3, 4, 5)
+
+# Escopo léxico
+y <- 100
+f <- function() cat("y do ambiente envolvente:", y, "\n")
+f()
+```
+
+---
+
+### Aula 18 — Boas Práticas de Como Escrever um Código
+
+A aula destacou a importância de escrever código legível, organizado e compartilhável:
+
+- **Motivação:** código bem escrito é mais fácil de entender, manter, depurar e compartilhar
+- **Ferramentas do RStudio:** formatação automática, destaque de sintaxe e diagnóstico de código
+- **Nomes de arquivos:** descritivos, sem espaços, com convenção consistente (ex.: `01_importacao_dados.R`)
+- **Comentários:** documentar o *porquê* das decisões, não apenas o *o quê* o código faz
+- **Nomes de objetos:** preferir nomes descritivos em *snake_case* (ex.: `media_notas`, não `mn`)
+- **Sintaxe:** espaços ao redor de operadores e após vírgulas; linhas com no máximo 80 caracteres
+- **Hierarquia e alinhamento:** seguir a indentação de acordo com a estrutura do código
+
+```{r}
+# Difícil de ler
+f<-function(x,y){x^2+2*x*y+y^2}
+
+# Com boas práticas
+quadrado_binomio <- function(x, y) {
+  # Calcula (x + y)^2 pela identidade algébrica
+  resultado <- x^2 + 2 * x * y + y^2
+  return(resultado)
+}
+
+quadrado_binomio(x = 3, y = 4)
+```
+
+---
+
+### Aula 19 — Pacotes
+
+A aula apresentou o ecossistema de pacotes como principal mecanismo de extensão do R:
+
+- **Motivação:** funções nativas têm escopo limitado; pacotes permitem adicionar novas funcionalidades
+- **Informações básicas:** um pacote é uma coleção organizada de funções, dados e documentação
+- **Esqueleto de um pacote:** diretórios `R/`, `man/`, arquivos `DESCRIPTION` e `NAMESPACE`
+- **Instalação:**
+  - *CRAN:* `install.packages("nome")` — repositório oficial, pacotes revisados
+  - *GitHub:* `remotes::install_github("usuario/repositorio")` — versões em desenvolvimento
+  - *Arquivo local:* `install.packages("pacote.tar.gz", repos = NULL, type = "source")`
+- **Pacotes desativados:** pacotes removidos do CRAN por inatividade ou problemas de manutenção
+- **Objetivo de um pacote:** encapsular e distribuir funcionalidades de forma padronizada
+- **Funções em um pacote:** funções exportadas (disponíveis ao usuário) e funções internas (uso privado)
+
+---
+
+### Aula 20 — Carregando e Anexando Pacotes
+
+A aula distinguiu dois conceitos frequentemente confundidos:
+
+- **Motivação:** entender a diferença entre carregar e anexar é essencial para evitar conflitos de nomes e compreender o comportamento do R
+- **Como instalar um pacote:** `install.packages()` — executado uma única vez
+- **Como anexar um pacote:** `library()` — executado no início de cada sessão; adiciona o pacote ao caminho de busca
+- **Implicações:**
+  - *Carregar* (`loadNamespace()`): torna o pacote disponível em memória, mas funções só acessíveis via `::` — sem alterar o caminho de busca
+  - *Anexar* (`library()`): carrega e insere o pacote no caminho de busca, tornando suas funções diretamente acessíveis
+
+```{r}
+# Caminho de busca antes e depois de anexar
+search()
+library(stats)
+search()
+```
+
+---
+
+### Aula 21 — NAMESPACE de um Pacote
+
+O NAMESPACE é o mecanismo que controla a visibilidade das funções de um pacote:
+
+- **O que é o NAMESPACE?** Arquivo que define quais funções são *exportadas* (visíveis ao usuário) e quais são *importadas* de outros pacotes
+- **Funções exportadas vs. internas:** exportadas ficam disponíveis ao anexar o pacote; internas são de uso privado e acessíveis apenas via `:::`
+- **Prevenção de conflitos:** o NAMESPACE impede que funções de pacotes diferentes com o mesmo nome se sobrescrevam, garantindo isolamento entre dependências
+- **Importância no desenvolvimento:** ao criar um pacote, o NAMESPACE define claramente sua interface pública e suas dependências externas
+
+---
+
+### Aula 22 — Quando Utilizar os Operadores `::` e `:::`
+
+A aula apresentou os operadores de acesso a namespaces e suas aplicações práticas:
+
+- **Operador `::`:** acessa funções *exportadas* de um pacote sem anexá-lo com `library()`. Útil para evitar ambiguidade quando dois pacotes possuem funções com o mesmo nome
+- **Operador `:::`:** acessa funções *internas* (não exportadas) de um pacote. Deve ser usado com cautela, pois essas funções não fazem parte da interface pública e podem mudar sem aviso
+- **Quando preferir `::` a `library()`:** em scripts que usam poucas funções de um pacote, para deixar explícita a origem e evitar poluir o caminho de busca
+
+```{r}
+# Usando :: para explicitar a origem da função
+resultado <- base::mean(c(1, 2, 3, NA), na.rm = TRUE)
+resultado
+
+x <- stats::rnorm(10, mean = 0, sd = 1)
+round(x, 2)
+```
+
+---
+
+### Aula 23 — Ambientes e Caminho de Busca
+
+A aula aprofundou a estrutura interna de ambientes do R:
+
+- **Hierarquia de ambientes:** o R organiza os ambientes em cadeia hierárquica — cada ambiente possui um *ambiente pai*; o topo é o ambiente vazio (`emptyenv()`)
+- **Caminho de busca (*search path*):** sequência de ambientes percorrida pelo R ao procurar um objeto ou função — inicia no Global Environment e percorre os pacotes anexados até o pacote `base`
+- **Função `search()`:** exibe o caminho de busca atual
+- **Efeito de `library()`:** ao anexar um pacote, ele é inserido logo após o Ambiente Global no caminho de busca
+- **Ambientes locais em funções:** cada chamada de função cria um ambiente de execução temporário, descartado ao término
+
+```{r}
+search()
+
+environmentName(globalenv())
+environmentName(baseenv())
+
+# Criando e usando um ambiente manualmente
+meu_amb <- new.env()
+assign("x", 42, envir = meu_amb)
+get("x", envir = meu_amb)
+```
+
+---
+
+### Aula 24 — Interface com Outras Linguagens
+
+A aula explorou o Princípio da Interface em sua dimensão mais ampla — a integração do R com outras linguagens:
+
+- **Motivação:** o R é excelente para análise estatística, mas pode ser lento em operações computacionalmente intensivas; a interface com outras linguagens permite combinar o melhor de cada ambiente
+- **Interface com C/C++ via `Rcpp`:** permite escrever e integrar código C++ diretamente em scripts R, com ganhos de performance em loops e operações numéricas pesadas
+- **Interface com Python via `reticulate`:** permite executar código Python dentro do R, compartilhar objetos entre as duas linguagens e usar bibliotecas como `pandas` e `numpy`
+- **Interface com Java via `rJava`:** permite chamar classes e métodos Java a partir do R
+- **Casos de uso:** simulações de alta performance, uso de bibliotecas de machine learning em Python, integração com sistemas legados
+
+---
+
+### Aula 25 — Considerações e Preparação para o Curso R Intermediário
+
+A aula de encerramento sintetizou o Curso R Básico e orientou o estudante sobre os próximos passos:
+
+- **Revisão dos conceitos centrais:** os três princípios do R (objeto, função e interface) permearam todo o curso e continuarão sendo a base para o nível intermediário
+- **Preparação para o R Intermediário:** o curso seguinte aprofundará temas como programação funcional, manipulação avançada de dados e visualização
+
+**Tópicos previstos para o Curso R Intermediário:**
+
+| Tema | Descrição |
+|------|-----------|
+| Programação funcional | `apply`, `lapply`, `sapply`, `Map`, `Reduce` |
+| Manipulação de dados | `dplyr`, `tidyr`, `data.table` |
+| Visualização | `ggplot2` e extensões |
+| Criação de pacotes | Estrutura, documentação e publicação no CRAN |
+| R Markdown / Quarto | Relatórios reproduzíveis |
+
+---
+
+## 🧠 Considerações Finais
+
+O Curso R Básico 2024 proporcionou uma base sólida e progressiva para o aprendizado da linguagem R. A estrutura didática — com slides, podcasts, videoaulas e exercícios propostos — favoreceu a compreensão gradual dos conceitos, da instalação do ambiente até tópicos avançados como escopo léxico, NAMESPACE e interface com outras linguagens.
+
+Os três princípios do R (objeto, função e interface) revelaram-se um fio condutor eficiente ao longo de todo o curso, permitindo compreender a linguagem não apenas como uma ferramenta, mas como um sistema coerente e bem projetado. A ênfase em boas práticas de programação desde as primeiras aulas também foi um diferencial importante para o desenvolvimento de hábitos de código legível e reproduzível.
+
+Como próximos passos, pretende-se consolidar os conceitos por meio dos exercícios propostos de cada módulo e iniciar o Curso R Intermediário, aprofundando o uso do R para análise de dados e programação avançada.
+
+---
 
 ## 📖 Referências
