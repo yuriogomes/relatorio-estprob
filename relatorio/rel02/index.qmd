@@ -30,7 +30,7 @@ Este relatório descreve as funções e conceitos apresentados na **Aula 04 — 
 
 O foco da aula é a manipulação de dados utilizando exclusivamente o **Base R** — ou seja, sem pacotes externos como `dplyr` ou `tidyverse` — cobrindo desde as estruturas fundamentais (vetores e data frames) até funções avançadas de agrupamento e controle de fluxo, aplicadas a dados reais do conjunto `penguins` [@Rbasico2022].
 
----
+------------------------------------------------------------------------
 
 ## 🎯 Objetivos
 
@@ -40,14 +40,14 @@ Descrever as funções apresentadas no Slide da Aula 04 e no Script da Aula 04 d
 
 ### Objetivos específicos
 
-- Compreender as estruturas de dados fundamentais do R (vetores e data frames)
-- Aplicar indexação posicional, nominal e lógica
-- Utilizar a família de funções `apply`
-- Explorar funções de agrupamento: `with()`, `within()`, `by()`, `ave()`, `aggregate()`, `split()`
-- Aplicar estruturas de controle (`if`, `for`, `while`) em problemas práticos
-- Trabalhar com a base de dados real `penguins`
+-   Compreender as estruturas de dados fundamentais do R (vetores e data frames)
+-   Aplicar indexação posicional, nominal e lógica
+-   Utilizar a família de funções `apply`
+-   Explorar funções de agrupamento: `with()`, `within()`, `by()`, `ave()`, `aggregate()`, `split()`
+-   Aplicar estruturas de controle (`if`, `for`, `while`) em problemas práticos
+-   Trabalhar com a base de dados real `penguins`
 
----
+------------------------------------------------------------------------
 
 ## 📚 Fundamentação Teórica
 
@@ -55,20 +55,20 @@ A manipulação de dados em Base R é sustentada por dois pilares principais: as
 
 A **família `apply`** representa uma alternativa mais eficiente e idiomática aos laços `for`, aplicando funções sobre linhas, colunas ou grupos de dados de forma concisa. Já as funções `with()`, `within()`, `by()`, `ave()`, `aggregate()` e `split()` ampliam essas capacidades para operações por grupo, criação de variáveis e resumo estatístico.
 
----
+------------------------------------------------------------------------
 
 ## ⚙️ Metodologia
 
-::: {.callout-note}
+::: callout-note
 As funções descritas neste relatório foram apresentadas no Slide da Aula 04 e detalhadas no Script da Aula 04 da disciplina LRCD. Os exemplos reproduzem e comentam o código desenvolvido em aula, aplicado tanto a um data frame didático de notas de alunos quanto à base de dados real `penguins`.
 :::
 
-- **Disciplina:** Linguagem R na Ciência de Dados (LRCD)
-- **Aula:** 04 — Manipulando Objetos em R
-- **Abordagem:** Base R (sem pacotes externos)
-- **Bases de dados utilizadas:** data frame didático de notas e `penguins` (pacote `datasets`)
+-   **Disciplina:** Linguagem R na Ciência de Dados (LRCD)
+-   **Aula:** 04 — Manipulando Objetos em R
+-   **Abordagem:** Base R (sem pacotes externos)
+-   **Bases de dados utilizadas:** data frame didático de notas e `penguins` (pacote `datasets`)
 
----
+------------------------------------------------------------------------
 
 ## 🔍 Funções Apresentadas na Aula
 
@@ -107,7 +107,7 @@ notas[!aprovados]  # reprovados
 A indexação lógica é especialmente poderosa: ao passar um vetor de `TRUE`/`FALSE`, o R retorna apenas os elementos correspondentes a `TRUE`, sem necessidade de laços.
 :::
 
----
+------------------------------------------------------------------------
 
 ### Data Frame
 
@@ -133,7 +133,7 @@ dados[, "estatistica"]
 dados[, 2]
 ```
 
----
+------------------------------------------------------------------------
 
 ### `subset()` — Subconjuntos de Data Frames
 
@@ -152,7 +152,7 @@ subset(dados, select = c(aluno, programacao))
 subset(dados, matematica >= 7 & estatistica >= 7)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Família `apply`
 
@@ -172,7 +172,7 @@ apply(dados[, 2:4], 1, mean)
 apply(dados[, 2:4], 2, mean)
 ```
 
----
+------------------------------------------------------------------------
 
 #### `lapply()` — Aplicar sobre listas, retornar lista
 
@@ -187,7 +187,7 @@ lista_notas <- dados[, 2:4]
 lapply(lista_notas, mean)
 ```
 
----
+------------------------------------------------------------------------
 
 #### `sapply()` — Aplicar sobre listas, simplificar resultado
 
@@ -204,7 +204,7 @@ sapply(lista_notas, mean)
 `lapply()` sempre retorna uma lista; `sapply()` simplifica o resultado para vetor ou matriz quando possível. Para resultados de comprimento uniforme, `sapply()` é geralmente mais conveniente.
 :::
 
----
+------------------------------------------------------------------------
 
 #### `tapply()` — Aplicar por grupos
 
@@ -228,7 +228,7 @@ tapply(dados_limpos$body_mass_g,
        mean)
 ```
 
----
+------------------------------------------------------------------------
 
 ### `with()` — Avaliar expressões no contexto de um data frame
 
@@ -248,7 +248,7 @@ with(dados_limpos,
      tapply(body_mass_g, species, mean))
 ```
 
----
+------------------------------------------------------------------------
 
 ### `within()` — Modificar variáveis dentro de um data frame
 
@@ -271,7 +271,7 @@ df2
 `with()` avalia uma expressão no contexto do data frame sem modificá-lo. `within()` permite criar ou modificar variáveis e retorna o data frame atualizado.
 :::
 
----
+------------------------------------------------------------------------
 
 ### `by()` — Aplicar função por grupos (versão generalizada)
 
@@ -295,7 +295,7 @@ by(dados_limpos$body_mass_g,
 Ambas aplicam funções por grupo, mas `by()` aceita data frames inteiros como primeiro argumento e lida melhor com agrupamentos múltiplos complexos. `tapply()` opera sobre vetores e retorna arrays, sendo mais adequado para agrupamentos simples.
 :::
 
----
+------------------------------------------------------------------------
 
 ### `ave()` — Estatística por grupo no mesmo tamanho do vetor
 
@@ -322,7 +322,7 @@ dados_limpos$acima_media <- dados_limpos$body_mass_g >
 table(dados_limpos$acima_media)
 ```
 
----
+------------------------------------------------------------------------
 
 ### `aggregate()` — Resumir dados por grupo em data frame
 
@@ -347,7 +347,7 @@ aggregate(cbind(bill_length_mm, flipper_length_mm, body_mass_g) ~ species,
           FUN = mean)
 ```
 
----
+------------------------------------------------------------------------
 
 ### `split()` — Dividir data frame em lista por grupos
 
@@ -369,7 +369,7 @@ lapply(dados_split, function(df) mean(df$body_mass_g))
 sapply(dados_split, nrow)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Estruturas de Controle
 
@@ -389,7 +389,7 @@ if (nota_media_ana >= 7) {
 }
 ```
 
----
+------------------------------------------------------------------------
 
 #### `for` — Laço com iteração explícita
 
@@ -413,7 +413,7 @@ situacao_manual
 ifelse(dados$media >= 7, "Aprovado", "Reprovado")
 ```
 
----
+------------------------------------------------------------------------
 
 #### `while` — Laço com condição de parada
 
@@ -434,7 +434,7 @@ cat("Média final:", round(media_simulada, 2), "\n")
 cat("Iterações necessárias:", iteracoes, "\n")
 ```
 
----
+------------------------------------------------------------------------
 
 #### Comparação: `for` vs `apply` vs `sapply`
 
@@ -455,7 +455,7 @@ apply(dados[, 2:4], 2, mean)
 sapply(dados[, 2:4], mean)
 ```
 
----
+------------------------------------------------------------------------
 
 ## 🔍 Resultados e Discussão
 
@@ -495,7 +495,7 @@ media_geral <- mean(dados$media)
 subset(dados, media > media_geral)
 ```
 
----
+------------------------------------------------------------------------
 
 ### Aplicação ao dataset `penguins`
 
@@ -524,7 +524,7 @@ medias_grupo <- aggregate(body_mass_g ~ species + sex,
 medias_grupo[which.max(medias_grupo$body_mass_g), ]
 ```
 
----
+------------------------------------------------------------------------
 
 ## 🧠 Considerações Finais
 
@@ -532,13 +532,13 @@ A Aula 04 demonstrou que o Base R oferece um conjunto rico e expressivo de ferra
 
 Os principais aprendizados foram:
 
-- A **família `apply`** (`apply`, `lapply`, `sapply`, `tapply`) permite substituir laços explícitos por código mais conciso e idiomático
-- As funções `with()` e `within()` melhoram a legibilidade do código ao evitar a repetição do nome do data frame
-- `by()`, `tapply()` e `aggregate()` são complementares: `tapply` retorna arrays, `by` é mais geral para agrupamentos complexos, e `aggregate` retorna data frames prontos para uso
-- `ave()` é especialmente útil para comparar cada observação com a estatística do seu próprio grupo, mantendo o vetor no mesmo tamanho dos dados originais
-- `split()` combinado com `lapply()` oferece uma abordagem flexível para operações por grupo
-- As estruturas de controle (`if`, `for`, `while`) são fundamentais, mas a aula evidenciou que **abordagens vetorizadas são preferíveis** sempre que possível, por serem mais concisas e eficientes
+-   A **família `apply`** (`apply`, `lapply`, `sapply`, `tapply`) permite substituir laços explícitos por código mais conciso e idiomático
+-   As funções `with()` e `within()` melhoram a legibilidade do código ao evitar a repetição do nome do data frame
+-   `by()`, `tapply()` e `aggregate()` são complementares: `tapply` retorna arrays, `by` é mais geral para agrupamentos complexos, e `aggregate` retorna data frames prontos para uso
+-   `ave()` é especialmente útil para comparar cada observação com a estatística do seu próprio grupo, mantendo o vetor no mesmo tamanho dos dados originais
+-   `split()` combinado com `lapply()` oferece uma abordagem flexível para operações por grupo
+-   As estruturas de controle (`if`, `for`, `while`) são fundamentais, mas a aula evidenciou que **abordagens vetorizadas são preferíveis** sempre que possível, por serem mais concisas e eficientes
 
----
+------------------------------------------------------------------------
 
 ## 📖 Referências
