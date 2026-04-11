@@ -1,12 +1,12 @@
 ---
 # Só mude aqui!!!!
-author: "Nome do Aluno"
-title: "Relatório de Aula Prática 02"
+author: "Yuri de Oliveira Gomes"
+title: "Relatório 02 - Manipulando Objetos em R"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
 link-citations: true
 csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
-subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+subtitle: "<a href='https://bendeivide.github.io/courses/lrcd/' target='_blank'>Linguagem R na Ciência de Dados</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
 include-before-body: header.html
 date: now
 date-format: "DD/MM/YYYY, HH:mm"
@@ -16,7 +16,6 @@ format:
     toc: true
     number-sections: true
     theme: bootstrap
-    #css: styles.css
     code-fold: true
     code-tools: true
 execute:
@@ -25,102 +24,521 @@ execute:
   message: false
 ---
 
-
 ## 📌 Introdução
 
-Descreva o contexto da prática e sua importância.
+Este relatório descreve as funções e conceitos apresentados na **Aula 04 — Manipulando Objetos em R**, da disciplina *Linguagem R na Ciência de Dados*, ministrada pelo Prof. Ben Dêivide de Oliveira Ferreira (DEFIM/CAP/UFSJ).
 
-> Exemplo: análise da variabilidade em experimentos físicos utilizando uma catapulta.
+O foco da aula é a manipulação de dados utilizando exclusivamente o **Base R** — ou seja, sem pacotes externos como `dplyr` ou `tidyverse` — cobrindo desde as estruturas fundamentais (vetores e data frames) até funções avançadas de agrupamento e controle de fluxo, aplicadas a dados reais do conjunto `penguins` [@Rbasico2022].
 
-
+---
 
 ## 🎯 Objetivos
 
 ### Objetivo geral
 
-Descrever o objetivo principal da prática.
+Descrever as funções apresentadas no Slide da Aula 04 e no Script da Aula 04 da disciplina Linguagem R na Ciência de Dados.
 
 ### Objetivos específicos
 
-- Coletar dados experimentais  
-- Aplicar estatística descritiva  
-- Construir gráficos  
-- Interpretar resultados  
+- Compreender as estruturas de dados fundamentais do R (vetores e data frames)
+- Aplicar indexação posicional, nominal e lógica
+- Utilizar a família de funções `apply`
+- Explorar funções de agrupamento: `with()`, `within()`, `by()`, `ave()`, `aggregate()`, `split()`
+- Aplicar estruturas de controle (`if`, `for`, `while`) em problemas práticos
+- Trabalhar com a base de dados real `penguins`
 
 ---
 
-## 📚  Fundamentação Teórica
+## 📚 Fundamentação Teórica
 
-Apresente os conceitos principais:
+A manipulação de dados em Base R é sustentada por dois pilares principais: as **estruturas de dados** (que organizam as informações) e as **funções** (que operam sobre essas estruturas). Vetores e data frames são as estruturas mais utilizadas em análises práticas, e o R oferece um conjunto rico de funções nativas para manipulá-los sem dependência de pacotes externos [@Rbasico2022].
 
-- Média
-- Variância
-- Desvio padrão
-- Amostragem
-
-$$
-\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-$$
+A **família `apply`** representa uma alternativa mais eficiente e idiomática aos laços `for`, aplicando funções sobre linhas, colunas ou grupos de dados de forma concisa. Já as funções `with()`, `within()`, `by()`, `ave()`, `aggregate()` e `split()` ampliam essas capacidades para operações por grupo, criação de variáveis e resumo estatístico.
 
 ---
 
 ## ⚙️ Metodologia
 
 ::: {.callout-note}
-Descreva como o experimento foi realizado.
+As funções descritas neste relatório foram apresentadas no Slide da Aula 04 e detalhadas no Script da Aula 04 da disciplina LRCD. Os exemplos reproduzem e comentam o código desenvolvido em aula, aplicado tanto a um data frame didático de notas de alunos quanto à base de dados real `penguins`.
 :::
 
-- Materiais utilizados  
-- Procedimento  
-- Número de repetições  
+- **Disciplina:** Linguagem R na Ciência de Dados (LRCD)
+- **Aula:** 04 — Manipulando Objetos em R
+- **Abordagem:** Base R (sem pacotes externos)
+- **Bases de dados utilizadas:** data frame didático de notas e `penguins` (pacote `datasets`)
+
+---
+
+## 🔍 Funções Apresentadas na Aula
+
+### Vetores
+
+O vetor é a estrutura de dados mais básica do R — todos os elementos devem ser do mesmo tipo. A aula apresentou criação, nomeação e operações sobre vetores, incluindo três formas de indexação.
+
+**Funções utilizadas:** `c()`, `names()`, `mean()`
+
+```{r}
+# Criando vetores
+notas  <- c(7.5, 8.0, 6.5, 9.0, 5.5)
+alunos <- c("Ana", "Bruno", "Carlos", "Daniela", "Eduardo")
+
+# Nomeando elementos
+names(notas) <- alunos
+notas
+
+# Operação vetorial
+media <- mean(notas)
+media
+
+# Indexação posicional
+notas[1]
+
+# Indexação por nome
+notas["Ana"]
+
+# Indexação lógica
+aprovados <- notas >= 7
+notas[aprovados]   # aprovados
+notas[!aprovados]  # reprovados
+```
+
+::: {.callout-tip title="Destaque"}
+A indexação lógica é especialmente poderosa: ao passar um vetor de `TRUE`/`FALSE`, o R retorna apenas os elementos correspondentes a `TRUE`, sem necessidade de laços.
+:::
+
+---
+
+### Data Frame
+
+O data frame é uma estrutura tabular onde cada coluna pode ter um tipo diferente. É criado com `data.frame()` e inspecionado com `str()` e `summary()`.
+
+**Funções utilizadas:** `data.frame()`, `str()`, `summary()`
+
+```{r}
+dados <- data.frame(
+  aluno       = alunos,
+  matematica  = c(7.5, 8.0, 6.5, 9.0, 5.5),
+  estatistica = c(8.0, 7.5, 6.0, 9.5, 6.0),
+  programacao = c(7.0, 8.5, 7.0, 9.0, 5.0)
+)
+
+dados
+str(dados)
+summary(dados)
+
+# Acessando colunas
+dados$matematica
+dados[, "estatistica"]
+dados[, 2]
+```
+
+---
+
+### `subset()` — Subconjuntos de Data Frames
+
+Filtra linhas de um data frame com base em condições lógicas, podendo também selecionar colunas específicas. É uma alternativa mais legível à indexação direta com `[`.
+
+**Sintaxe:** `subset(x, subset, select)`
+
+```{r}
+# Alunos com nota >= 7 em matemática
+subset(dados, matematica >= 7)
+
+# Selecionando colunas específicas
+subset(dados, select = c(aluno, programacao))
+
+# Condição múltipla
+subset(dados, matematica >= 7 & estatistica >= 7)
+```
+
+---
+
+### Família `apply`
+
+A família `apply` aplica uma função sobre elementos de uma estrutura de dados, evitando laços explícitos e tornando o código mais conciso e eficiente.
+
+#### `apply()` — Aplicar sobre linhas ou colunas de matrizes/data frames
+
+Aplica uma função sobre as linhas (`MARGIN = 1`) ou colunas (`MARGIN = 2`) de uma matriz ou data frame numérico.
+
+**Sintaxe:** `apply(X, MARGIN, FUN)`
+
+```{r}
+# Média por linha (por aluno)
+apply(dados[, 2:4], 1, mean)
+
+# Média por coluna (por disciplina)
+apply(dados[, 2:4], 2, mean)
+```
+
+---
+
+#### `lapply()` — Aplicar sobre listas, retornar lista
+
+Aplica uma função a cada elemento de uma lista ou vetor e **sempre retorna uma lista**.
+
+**Sintaxe:** `lapply(X, FUN)`
+
+```{r}
+lista_notas <- dados[, 2:4]
+
+# Retorna lista
+lapply(lista_notas, mean)
+```
+
+---
+
+#### `sapply()` — Aplicar sobre listas, simplificar resultado
+
+Funciona como `lapply()`, mas tenta **simplificar** o resultado — retornando um vetor ou matriz quando possível.
+
+**Sintaxe:** `sapply(X, FUN)`
+
+```{r}
+# Retorna vetor nomeado
+sapply(lista_notas, mean)
+```
+
+::: {.callout-tip title="Diferença entre lapply e sapply"}
+`lapply()` sempre retorna uma lista; `sapply()` simplifica o resultado para vetor ou matriz quando possível. Para resultados de comprimento uniforme, `sapply()` é geralmente mais conveniente.
+:::
+
+---
+
+#### `tapply()` — Aplicar por grupos
+
+Aplica uma função a subconjuntos de um vetor, definidos por um fator de agrupamento. Retorna um array com os resultados por grupo.
+
+**Sintaxe:** `tapply(X, INDEX, FUN)`
+
+```{r}
+# Carregando penguins
+library(palmerpenguins)
+dados_limpos <- na.omit(penguins)
+
+# Média do comprimento do bico por espécie
+tapply(dados_limpos$bill_length_mm,
+       dados_limpos$species,
+       mean)
+
+# Massa média por sexo
+tapply(dados_limpos$body_mass_g,
+       dados_limpos$sex,
+       mean)
+```
+
+---
+
+### `with()` — Avaliar expressões no contexto de um data frame
+
+Permite referenciar colunas de um data frame diretamente pelo nome, sem repetir `df$` a cada vez. Não modifica o data frame original.
+
+**Sintaxe:** `with(data, expr)`
+
+```{r}
+# Sem with: necessário repetir o prefixo
+mean(dados_limpos$body_mass_g)
+
+# Com with: mais legível
+with(dados_limpos, mean(body_mass_g))
+
+# Combinando with e tapply
+with(dados_limpos,
+     tapply(body_mass_g, species, mean))
+```
+
+---
+
+### `within()` — Modificar variáveis dentro de um data frame
+
+Semelhante ao `with()`, mas permite **criar, modificar ou remover variáveis** dentro do data frame, retornando uma cópia modificada.
+
+**Sintaxe:** `within(data, expr)`
+
+```{r}
+df <- data.frame(a = 1:6,
+                 b = rep(letters[1:3], each = 2))
+
+# Criando nova variável de forma organizada
+df2 <- within(df, {
+  nova <- a * 2
+})
+df2
+```
+
+::: {.callout-tip title="with() vs within()"}
+`with()` avalia uma expressão no contexto do data frame sem modificá-lo. `within()` permite criar ou modificar variáveis e retorna o data frame atualizado.
+:::
+
+---
+
+### `by()` — Aplicar função por grupos (versão generalizada)
+
+Aplica uma função a subgrupos de um data frame. É mais geral do que `tapply()` pois aceita múltiplas variáveis de agrupamento e opera sobre data frames inteiros (não apenas vetores).
+
+**Sintaxe:** `by(data, INDICES, FUN)`
+
+```{r}
+# Média da massa por espécie
+by(dados_limpos$body_mass_g,
+   dados_limpos$species,
+   mean)
+
+# Agrupamento por espécie e sexo
+by(dados_limpos$body_mass_g,
+   dados_limpos[, c("species", "sex")],
+   mean)
+```
+
+::: {.callout-tip title="by() vs tapply()"}
+Ambas aplicam funções por grupo, mas `by()` aceita data frames inteiros como primeiro argumento e lida melhor com agrupamentos múltiplos complexos. `tapply()` opera sobre vetores e retorna arrays, sendo mais adequado para agrupamentos simples.
+:::
+
+---
+
+### `ave()` — Estatística por grupo no mesmo tamanho do vetor
+
+Calcula uma estatística por grupo e **retorna um vetor do mesmo comprimento** do vetor original, com o resultado repetido para cada observação do grupo. Útil para comparar cada indivíduo com a média do seu grupo.
+
+**Sintaxe:** `ave(x, ..., FUN = mean)`
+
+```{r}
+df <- data.frame(a = 1:6,
+                 b = rep(letters[1:3], each = 2))
+
+# Média de 'a' por grupo 'b', repetida para cada linha
+ave(df$a, df$b, FUN = mean)
+
+# Aplicação prática: comparar cada pinguim com a média da espécie
+dados_limpos$media_por_especie <- ave(dados_limpos$body_mass_g,
+                                      dados_limpos$species,
+                                      FUN = mean)
+
+# Identificar quem está acima da média da própria espécie
+dados_limpos$acima_media <- dados_limpos$body_mass_g >
+  dados_limpos$media_por_especie
+
+table(dados_limpos$acima_media)
+```
+
+---
+
+### `aggregate()` — Resumir dados por grupo em data frame
+
+Agrega dados calculando uma estatística por grupo e retorna um **data frame** com os resultados. Suporta fórmulas (`y ~ x`) para especificar variável e agrupamento.
+
+**Sintaxe:** `aggregate(x ~ group, data, FUN)`
+
+```{r}
+# Média de uma variável por espécie
+aggregate(body_mass_g ~ species,
+          data = dados_limpos,
+          FUN = mean)
+
+# Média por espécie e sexo
+aggregate(body_mass_g ~ species + sex,
+          data = dados_limpos,
+          FUN = mean)
+
+# Múltiplas variáveis simultaneamente
+aggregate(cbind(bill_length_mm, flipper_length_mm, body_mass_g) ~ species,
+          data = dados_limpos,
+          FUN = mean)
+```
+
+---
+
+### `split()` — Dividir data frame em lista por grupos
+
+Divide um data frame (ou vetor) em uma **lista de subconjuntos**, um por nível do fator de agrupamento. Frequentemente combinado com `lapply()` ou `sapply()`.
+
+**Sintaxe:** `split(x, f)`
+
+```{r}
+# Dividindo por espécie
+dados_split <- split(dados_limpos, dados_limpos$species)
+
+# Nomes dos grupos
+names(dados_split)
+
+# Média da massa em cada grupo
+lapply(dados_split, function(df) mean(df$body_mass_g))
+
+# Número de observações por grupo
+sapply(dados_split, nrow)
+```
+
+---
+
+### Estruturas de Controle
+
+As estruturas de controle direcionam o fluxo de execução do programa. A aula apresentou `if/else`, `for` e `while`, comparando-os com as abordagens vetorizadas da família `apply`.
+
+#### `if` / `else`
+
+Executa um bloco de código condicionalmente.
+
+```{r}
+nota_media_ana <- dados$media[1] <- mean(c(7.5, 8.0, 7.0))
+
+if (nota_media_ana >= 7) {
+  print("Ana está aprovada")
+} else {
+  print("Ana está reprovada")
+}
+```
+
+---
+
+#### `for` — Laço com iteração explícita
+
+Repete um bloco para cada elemento de um vetor ou lista. A aula demonstrou que `apply` é preferível ao `for` em muitos casos práticos.
+
+```{r}
+# Classificando alunos com for + if (forma explícita)
+situacao_manual <- character(nrow(dados))
+
+for (i in 1:nrow(dados)) {
+  if (dados$media[i] >= 7) {
+    situacao_manual[i] <- "Aprovado"
+  } else {
+    situacao_manual[i] <- "Reprovado"
+  }
+}
+
+situacao_manual
+
+# Equivalente vetorizado com ifelse (preferível)
+ifelse(dados$media >= 7, "Aprovado", "Reprovado")
+```
+
+---
+
+#### `while` — Laço com condição de parada
+
+Repete um bloco enquanto uma condição for verdadeira.
+
+```{r}
+# Simulando crescimento até atingir valor alvo
+media_simulada <- 5.0
+incremento     <- 0.3
+iteracoes      <- 0
+
+while (media_simulada < 7) {
+  media_simulada <- media_simulada + incremento
+  iteracoes      <- iteracoes + 1
+}
+
+cat("Média final:", round(media_simulada, 2), "\n")
+cat("Iterações necessárias:", iteracoes, "\n")
+```
+
+---
+
+#### Comparação: `for` vs `apply` vs `sapply`
+
+A aula destacou que, para operações sobre colunas de data frames, `apply` e `sapply` são mais concisos e geralmente mais eficientes do que laços `for` explícitos.
+
+```{r}
+# Usando for
+medias_for <- numeric(ncol(dados[, 2:4]))
+for (i in 1:ncol(dados[, 2:4])) {
+  medias_for[i] <- mean(dados[, 2:4][, i])
+}
+medias_for
+
+# Usando apply
+apply(dados[, 2:4], 2, mean)
+
+# Usando sapply
+sapply(dados[, 2:4], mean)
+```
 
 ---
 
 ## 🔍 Resultados e Discussão
 
-Apresente e interprete os resultados obtidos a partir dos dados coletados.
+### Aplicação ao data frame de notas
 
-- Descreva os principais resultados numéricos (média, variabilidade, etc.).
-- Comente o comportamento dos dados observados nos gráficos.
-- Indique se há presença de valores discrepantes (outliers).
-- Avalie se os dados apresentam simetria ou tendência.
-
-Em seguida, discuta os resultados à luz dos conceitos teóricos:
-
-- Os resultados estão de acordo com o esperado?
-- Há grande variabilidade? O que isso significa no contexto do experimento?
-- Quais fatores podem ter influenciado os resultados?
-- Existem possíveis fontes de erro experimental?
-
-Procure não apenas descrever, mas **interpretar os dados**.
-
-### 💬 Exemplo de como citar uma referência bibliográfica
-
-Depois de inserido as informaçõe no arquivo **referencias.bib**, use:
-
-- Segundo @Rbasico2022
-- Tudo é um objeto em R [@Rbasico2022]
-
-### 📊  Análise de Dados
+Com o data frame didático, foi possível demonstrar o fluxo completo de uma análise: criação da estrutura de dados, cálculo de estatísticas, filtragem e classificação dos alunos.
 
 ```{r}
-distancia <- c(10.2, 9.8, 10.5, 10.1, 9.9, 10.3)
-distancia
+# Recriando o data frame completo
+notas  <- c(7.5, 8.0, 6.5, 9.0, 5.5)
+alunos <- c("Ana", "Bruno", "Carlos", "Daniela", "Eduardo")
+
+dados <- data.frame(
+  aluno       = alunos,
+  matematica  = notas,
+  estatistica = c(8.0, 7.5, 6.0, 9.5, 6.0),
+  programacao = c(7.0, 8.5, 7.0, 9.0, 5.0)
+)
+
+# Média geral por aluno
+dados$media <- apply(dados[, 2:4], 1, mean)
+
+# Situação
+dados$situacao <- ifelse(dados$media >= 7, "Aprovado", "Reprovado")
+
+dados
+
+# Disciplina com maior média
+medias_disc <- sapply(dados[, 2:4], mean)
+cat("Disciplina com maior média:", names(which.max(medias_disc)), "\n")
+
+# Alunos aprovados
+cat("Alunos aprovados:", sum(dados$situacao == "Aprovado"), "\n")
+
+# Alunos acima da média geral
+media_geral <- mean(dados$media)
+subset(dados, media > media_geral)
 ```
 
-## 🧠 Considerações finais
+---
 
-Apresente uma síntese dos principais pontos observados no experimento.
+### Aplicação ao dataset `penguins`
 
-- Retome o objetivo da prática e indique se ele foi alcançado.
-- Destaque os principais aprendizados obtidos.
-- Comente brevemente sobre a qualidade dos dados coletados.
-- Sugira possíveis melhorias no procedimento experimental.
+O dataset `penguins` contém 344 observações de pinguins coletadas no arquipélago Palmer, Antártica, com 8 variáveis — 3 categóricas (`species`, `island`, `sex`) e 5 numéricas (`bill_length_mm`, `bill_depth_mm`, `flipper_length_mm`, `body_mass_g`, `year`).
 
-Evite repetir apenas os resultados; foque nas **conclusões e reflexões** sobre a prática realizada.
+```{r}
+library(palmerpenguins)
+dados_limpos <- na.omit(penguins)
 
-## Aprenda Quarto
+cat("Observações após remoção de NAs:", nrow(dados_limpos), "de", nrow(penguins), "\n")
 
-Acesse [Quarto](https://quarto.org/).
+# Massa média por espécie
+medias_especie <- tapply(dados_limpos$body_mass_g,
+                         dados_limpos$species,
+                         mean)
+medias_especie
+
+cat("Espécie com maior massa média:",
+    names(which.max(medias_especie)), "\n")
+
+# Combinação espécie + sexo com maior massa média
+medias_grupo <- aggregate(body_mass_g ~ species + sex,
+                          data = dados_limpos,
+                          mean)
+
+medias_grupo[which.max(medias_grupo$body_mass_g), ]
+```
+
+---
+
+## 🧠 Considerações Finais
+
+A Aula 04 demonstrou que o Base R oferece um conjunto rico e expressivo de ferramentas para manipulação de dados, dispensando pacotes externos para a maioria das tarefas analíticas cotidianas.
+
+Os principais aprendizados foram:
+
+- A **família `apply`** (`apply`, `lapply`, `sapply`, `tapply`) permite substituir laços explícitos por código mais conciso e idiomático
+- As funções `with()` e `within()` melhoram a legibilidade do código ao evitar a repetição do nome do data frame
+- `by()`, `tapply()` e `aggregate()` são complementares: `tapply` retorna arrays, `by` é mais geral para agrupamentos complexos, e `aggregate` retorna data frames prontos para uso
+- `ave()` é especialmente útil para comparar cada observação com a estatística do seu próprio grupo, mantendo o vetor no mesmo tamanho dos dados originais
+- `split()` combinado com `lapply()` oferece uma abordagem flexível para operações por grupo
+- As estruturas de controle (`if`, `for`, `while`) são fundamentais, mas a aula evidenciou que **abordagens vetorizadas são preferíveis** sempre que possível, por serem mais concisas e eficientes
+
+---
 
 ## 📖 Referências
