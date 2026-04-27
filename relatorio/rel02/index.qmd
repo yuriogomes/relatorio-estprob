@@ -59,10 +59,6 @@ A **família `apply`** representa uma alternativa mais eficiente e idiomática a
 
 ## ⚙️ Metodologia
 
-::: callout-note
-As funções descritas neste relatório foram apresentadas no Slide da Aula 04 e detalhadas no Script da Aula 04 da disciplina LRCD. Os exemplos reproduzem e comentam o código desenvolvido em aula, aplicado tanto a um data frame didático de notas de alunos quanto à base de dados real `penguins`.
-:::
-
 -   **Disciplina:** Linguagem R na Ciência de Dados (LRCD)
 -   **Aula:** 04 — Manipulando Objetos em R
 -   **Abordagem:** Base R (sem pacotes externos)
@@ -103,14 +99,9 @@ notas[aprovados]   # aprovados
 notas[!aprovados]  # reprovados
 ```
 
-::: {.callout-tip title="Destaque"}
-A indexação lógica é especialmente poderosa: ao passar um vetor de `TRUE`/`FALSE`, o R retorna apenas os elementos correspondentes a `TRUE`, sem necessidade de laços.
-:::
-
 ------------------------------------------------------------------------
 
 ### Data Frame
-
 O data frame é uma estrutura tabular onde cada coluna pode ter um tipo diferente. É criado com `data.frame()` e inspecionado com `str()` e `summary()`.
 
 **Funções utilizadas:** `data.frame()`, `str()`, `summary()`
@@ -200,10 +191,6 @@ Funciona como `lapply()`, mas tenta **simplificar** o resultado — retornando u
 sapply(lista_notas, mean)
 ```
 
-::: {.callout-tip title="Diferença entre lapply e sapply"}
-`lapply()` sempre retorna uma lista; `sapply()` simplifica o resultado para vetor ou matriz quando possível. Para resultados de comprimento uniforme, `sapply()` é geralmente mais conveniente.
-:::
-
 ------------------------------------------------------------------------
 
 #### `tapply()` — Aplicar por grupos
@@ -267,10 +254,6 @@ df2 <- within(df, {
 df2
 ```
 
-::: {.callout-tip title="with() vs within()"}
-`with()` avalia uma expressão no contexto do data frame sem modificá-lo. `within()` permite criar ou modificar variáveis e retorna o data frame atualizado.
-:::
-
 ------------------------------------------------------------------------
 
 ### `by()` — Aplicar função por grupos (versão generalizada)
@@ -290,10 +273,6 @@ by(dados_limpos$body_mass_g,
    dados_limpos[, c("species", "sex")],
    mean)
 ```
-
-::: {.callout-tip title="by() vs tapply()"}
-Ambas aplicam funções por grupo, mas `by()` aceita data frames inteiros como primeiro argumento e lida melhor com agrupamentos múltiplos complexos. `tapply()` opera sobre vetores e retorna arrays, sendo mais adequado para agrupamentos simples.
-:::
 
 ------------------------------------------------------------------------
 

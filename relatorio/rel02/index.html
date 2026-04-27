@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>Relatório 02 - Manipulando Objetos em R</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -82,15 +85,14 @@ div.csl-indent {
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-efbb37e9afcc02144ebbc7afd12a776f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -165,7 +167,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">11/04/2026, 19:09</p>
+      <p class="date">27/04/2026, 19:13</p>
     </div>
   </div>
   
@@ -210,19 +212,6 @@ div.csl-indent {
 </section>
 <section id="metodologia" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="metodologia"><span class="header-section-number">4</span> ⚙️ Metodologia</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>As funções descritas neste relatório foram apresentadas no Slide da Aula 04 e detalhadas no Script da Aula 04 da disciplina LRCD. Os exemplos reproduzem e comentam o código desenvolvido em aula, aplicado tanto a um data frame didático de notas de alunos quanto à base de dados real <code>penguins</code>.</p>
-</div>
-</div>
 <ul>
 <li><strong>Disciplina:</strong> Linguagem R na Ciência de Dados (LRCD)</li>
 <li><strong>Aula:</strong> 04 — Manipulando Objetos em R</li>
@@ -296,19 +285,6 @@ Nota
 <div class="cell-output cell-output-stdout">
 <pre><code> Carlos Eduardo 
     6.5     5.5 </code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Destaque">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Destaque
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A indexação lógica é especialmente poderosa: ao passar um vetor de <code>TRUE</code>/<code>FALSE</code>, o R retorna apenas os elementos correspondentes a <code>TRUE</code>, sem necessidade de laços.</p>
 </div>
 </div>
 <hr>
@@ -497,19 +473,6 @@ $programacao
         7.3         7.4         7.3 </code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Diferença entre lapply e sapply">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Diferença entre lapply e sapply
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>lapply()</code> sempre retorna uma lista; <code>sapply()</code> simplifica o resultado para vetor ou matriz quando possível. Para resultados de comprimento uniforme, <code>sapply()</code> é geralmente mais conveniente.</p>
-</div>
-</div>
 <hr>
 </section>
 <section id="tapply-aplicar-por-grupos" class="level4" data-number="5.4.4">
@@ -607,19 +570,6 @@ $programacao
 6 6 c   12</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="with() vs within()">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>with() vs within()
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>with()</code> avalia uma expressão no contexto do data frame sem modificá-lo. <code>within()</code> permite criar ou modificar variáveis e retorna o data frame atualizado.</p>
-</div>
-</div>
 <hr>
 </section>
 <section id="by-aplicar-função-por-grupos-versão-generalizada" class="level3" data-number="5.7">
@@ -675,19 +625,6 @@ sex: male
 species: Gentoo
 sex: male
 [1] 5484.836</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="by() vs tapply()">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>by() vs tapply()
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ambas aplicam funções por grupo, mas <code>by()</code> aceita data frames inteiros como primeiro argumento e lida melhor com agrupamentos múltiplos complexos. <code>tapply()</code> opera sobre vetores e retorna arrays, sendo mais adequado para agrupamentos simples.</p>
 </div>
 </div>
 <hr>
@@ -1576,7 +1513,7 @@ BATISTA, B. D. O.; OLIVEIRA, D. A. B. J. <strong>R básico</strong>. 1. ed. Ouro
 <span id="cb103-30"><a href="#cb103-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb103-31"><a href="#cb103-31" aria-hidden="true" tabindex="-1"></a>O foco da aula é a manipulação de dados utilizando exclusivamente o **Base R** — ou seja, sem pacotes externos como <span class="in">`dplyr`</span> ou <span class="in">`tidyverse`</span> — cobrindo desde as estruturas fundamentais (vetores e data frames) até funções avançadas de agrupamento e controle de fluxo, aplicadas a dados reais do conjunto <span class="in">`penguins`</span> <span class="co">[</span><span class="ot">@Rbasico2022</span><span class="co">]</span>.</span>
 <span id="cb103-32"><a href="#cb103-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-33"><a href="#cb103-33" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb103-33"><a href="#cb103-33" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-34"><a href="#cb103-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb103-35"><a href="#cb103-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🎯 Objetivos</span></span>
 <span id="cb103-36"><a href="#cb103-36" aria-hidden="true" tabindex="-1"></a></span>
@@ -1586,14 +1523,14 @@ BATISTA, B. D. O.; OLIVEIRA, D. A. B. J. <strong>R básico</strong>. 1. ed. Ouro
 <span id="cb103-40"><a href="#cb103-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb103-41"><a href="#cb103-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Objetivos específicos</span></span>
 <span id="cb103-42"><a href="#cb103-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-43"><a href="#cb103-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Compreender as estruturas de dados fundamentais do R (vetores e data frames)</span>
-<span id="cb103-44"><a href="#cb103-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Aplicar indexação posicional, nominal e lógica</span>
-<span id="cb103-45"><a href="#cb103-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Utilizar a família de funções <span class="in">`apply`</span></span>
-<span id="cb103-46"><a href="#cb103-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Explorar funções de agrupamento: <span class="in">`with()`</span>, <span class="in">`within()`</span>, <span class="in">`by()`</span>, <span class="in">`ave()`</span>, <span class="in">`aggregate()`</span>, <span class="in">`split()`</span></span>
-<span id="cb103-47"><a href="#cb103-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Aplicar estruturas de controle (<span class="in">`if`</span>, <span class="in">`for`</span>, <span class="in">`while`</span>) em problemas práticos</span>
-<span id="cb103-48"><a href="#cb103-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Trabalhar com a base de dados real <span class="in">`penguins`</span></span>
+<span id="cb103-43"><a href="#cb103-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compreender as estruturas de dados fundamentais do R (vetores e data frames)</span>
+<span id="cb103-44"><a href="#cb103-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Aplicar indexação posicional, nominal e lógica</span>
+<span id="cb103-45"><a href="#cb103-45" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Utilizar a família de funções <span class="in">`apply`</span></span>
+<span id="cb103-46"><a href="#cb103-46" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explorar funções de agrupamento: <span class="in">`with()`</span>, <span class="in">`within()`</span>, <span class="in">`by()`</span>, <span class="in">`ave()`</span>, <span class="in">`aggregate()`</span>, <span class="in">`split()`</span></span>
+<span id="cb103-47"><a href="#cb103-47" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Aplicar estruturas de controle (<span class="in">`if`</span>, <span class="in">`for`</span>, <span class="in">`while`</span>) em problemas práticos</span>
+<span id="cb103-48"><a href="#cb103-48" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Trabalhar com a base de dados real <span class="in">`penguins`</span></span>
 <span id="cb103-49"><a href="#cb103-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-50"><a href="#cb103-50" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb103-50"><a href="#cb103-50" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-51"><a href="#cb103-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb103-52"><a href="#cb103-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📚 Fundamentação Teórica</span></span>
 <span id="cb103-53"><a href="#cb103-53" aria-hidden="true" tabindex="-1"></a></span>
@@ -1601,493 +1538,472 @@ BATISTA, B. D. O.; OLIVEIRA, D. A. B. J. <strong>R básico</strong>. 1. ed. Ouro
 <span id="cb103-55"><a href="#cb103-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb103-56"><a href="#cb103-56" aria-hidden="true" tabindex="-1"></a>A **família `apply`** representa uma alternativa mais eficiente e idiomática aos laços <span class="in">`for`</span>, aplicando funções sobre linhas, colunas ou grupos de dados de forma concisa. Já as funções <span class="in">`with()`</span>, <span class="in">`within()`</span>, <span class="in">`by()`</span>, <span class="in">`ave()`</span>, <span class="in">`aggregate()`</span> e <span class="in">`split()`</span> ampliam essas capacidades para operações por grupo, criação de variáveis e resumo estatístico.</span>
 <span id="cb103-57"><a href="#cb103-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-58"><a href="#cb103-58" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb103-58"><a href="#cb103-58" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-59"><a href="#cb103-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb103-60"><a href="#cb103-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## ⚙️ Metodologia</span></span>
 <span id="cb103-61"><a href="#cb103-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-62"><a href="#cb103-62" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb103-63"><a href="#cb103-63" aria-hidden="true" tabindex="-1"></a>As funções descritas neste relatório foram apresentadas no Slide da Aula 04 e detalhadas no Script da Aula 04 da disciplina LRCD. Os exemplos reproduzem e comentam o código desenvolvido em aula, aplicado tanto a um data frame didático de notas de alunos quanto à base de dados real <span class="in">`penguins`</span>.</span>
-<span id="cb103-64"><a href="#cb103-64" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb103-65"><a href="#cb103-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-66"><a href="#cb103-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Disciplina:** Linguagem R na Ciência de Dados (LRCD)</span>
-<span id="cb103-67"><a href="#cb103-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Aula:** 04 — Manipulando Objetos em R</span>
-<span id="cb103-68"><a href="#cb103-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Abordagem:** Base R (sem pacotes externos)</span>
-<span id="cb103-69"><a href="#cb103-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Bases de dados utilizadas:** data frame didático de notas e <span class="in">`penguins`</span> (pacote <span class="in">`datasets`</span>)</span>
+<span id="cb103-62"><a href="#cb103-62" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Disciplina:** Linguagem R na Ciência de Dados (LRCD)</span>
+<span id="cb103-63"><a href="#cb103-63" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Aula:** 04 — Manipulando Objetos em R</span>
+<span id="cb103-64"><a href="#cb103-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Abordagem:** Base R (sem pacotes externos)</span>
+<span id="cb103-65"><a href="#cb103-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Bases de dados utilizadas:** data frame didático de notas e <span class="in">`penguins`</span> (pacote <span class="in">`datasets`</span>)</span>
+<span id="cb103-66"><a href="#cb103-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-67"><a href="#cb103-67" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-68"><a href="#cb103-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-69"><a href="#cb103-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔍 Funções Apresentadas na Aula</span></span>
 <span id="cb103-70"><a href="#cb103-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-71"><a href="#cb103-71" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb103-71"><a href="#cb103-71" aria-hidden="true" tabindex="-1"></a><span class="fu">### Vetores</span></span>
 <span id="cb103-72"><a href="#cb103-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-73"><a href="#cb103-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔍 Funções Apresentadas na Aula</span></span>
+<span id="cb103-73"><a href="#cb103-73" aria-hidden="true" tabindex="-1"></a>O vetor é a estrutura de dados mais básica do R — todos os elementos devem ser do mesmo tipo. A aula apresentou criação, nomeação e operações sobre vetores, incluindo três formas de indexação.</span>
 <span id="cb103-74"><a href="#cb103-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-75"><a href="#cb103-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### Vetores</span></span>
+<span id="cb103-75"><a href="#cb103-75" aria-hidden="true" tabindex="-1"></a>**Funções utilizadas:** <span class="in">`c()`</span>, <span class="in">`names()`</span>, <span class="in">`mean()`</span></span>
 <span id="cb103-76"><a href="#cb103-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-77"><a href="#cb103-77" aria-hidden="true" tabindex="-1"></a>O vetor é a estrutura de dados mais básica do R — todos os elementos devem ser do mesmo tipo. A aula apresentou criação, nomeação e operações sobre vetores, incluindo três formas de indexação.</span>
-<span id="cb103-78"><a href="#cb103-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-79"><a href="#cb103-79" aria-hidden="true" tabindex="-1"></a>**Funções utilizadas:** <span class="in">`c()`</span>, <span class="in">`names()`</span>, <span class="in">`mean()`</span></span>
-<span id="cb103-80"><a href="#cb103-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-83"><a href="#cb103-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-84"><a href="#cb103-84" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando vetores</span></span>
-<span id="cb103-85"><a href="#cb103-85" aria-hidden="true" tabindex="-1"></a>notas  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">6.5</span>, <span class="fl">9.0</span>, <span class="fl">5.5</span>)</span>
-<span id="cb103-86"><a href="#cb103-86" aria-hidden="true" tabindex="-1"></a>alunos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Bruno"</span>, <span class="st">"Carlos"</span>, <span class="st">"Daniela"</span>, <span class="st">"Eduardo"</span>)</span>
+<span id="cb103-79"><a href="#cb103-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-80"><a href="#cb103-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando vetores</span></span>
+<span id="cb103-81"><a href="#cb103-81" aria-hidden="true" tabindex="-1"></a>notas  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">6.5</span>, <span class="fl">9.0</span>, <span class="fl">5.5</span>)</span>
+<span id="cb103-82"><a href="#cb103-82" aria-hidden="true" tabindex="-1"></a>alunos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Bruno"</span>, <span class="st">"Carlos"</span>, <span class="st">"Daniela"</span>, <span class="st">"Eduardo"</span>)</span>
+<span id="cb103-83"><a href="#cb103-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-84"><a href="#cb103-84" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomeando elementos</span></span>
+<span id="cb103-85"><a href="#cb103-85" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(notas) <span class="ot">&lt;-</span> alunos</span>
+<span id="cb103-86"><a href="#cb103-86" aria-hidden="true" tabindex="-1"></a>notas</span>
 <span id="cb103-87"><a href="#cb103-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-88"><a href="#cb103-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomeando elementos</span></span>
-<span id="cb103-89"><a href="#cb103-89" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(notas) <span class="ot">&lt;-</span> alunos</span>
-<span id="cb103-90"><a href="#cb103-90" aria-hidden="true" tabindex="-1"></a>notas</span>
+<span id="cb103-88"><a href="#cb103-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Operação vetorial</span></span>
+<span id="cb103-89"><a href="#cb103-89" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(notas)</span>
+<span id="cb103-90"><a href="#cb103-90" aria-hidden="true" tabindex="-1"></a>media</span>
 <span id="cb103-91"><a href="#cb103-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-92"><a href="#cb103-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Operação vetorial</span></span>
-<span id="cb103-93"><a href="#cb103-93" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(notas)</span>
-<span id="cb103-94"><a href="#cb103-94" aria-hidden="true" tabindex="-1"></a>media</span>
-<span id="cb103-95"><a href="#cb103-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-96"><a href="#cb103-96" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexação posicional</span></span>
-<span id="cb103-97"><a href="#cb103-97" aria-hidden="true" tabindex="-1"></a>notas[<span class="dv">1</span>]</span>
-<span id="cb103-98"><a href="#cb103-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-99"><a href="#cb103-99" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexação por nome</span></span>
-<span id="cb103-100"><a href="#cb103-100" aria-hidden="true" tabindex="-1"></a>notas[<span class="st">"Ana"</span>]</span>
-<span id="cb103-101"><a href="#cb103-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-102"><a href="#cb103-102" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexação lógica</span></span>
-<span id="cb103-103"><a href="#cb103-103" aria-hidden="true" tabindex="-1"></a>aprovados <span class="ot">&lt;-</span> notas <span class="sc">&gt;=</span> <span class="dv">7</span></span>
-<span id="cb103-104"><a href="#cb103-104" aria-hidden="true" tabindex="-1"></a>notas[aprovados]   <span class="co"># aprovados</span></span>
-<span id="cb103-105"><a href="#cb103-105" aria-hidden="true" tabindex="-1"></a>notas[<span class="sc">!</span>aprovados]  <span class="co"># reprovados</span></span>
-<span id="cb103-106"><a href="#cb103-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-107"><a href="#cb103-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-108"><a href="#cb103-108" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="Destaque"}</span>
-<span id="cb103-109"><a href="#cb103-109" aria-hidden="true" tabindex="-1"></a>A indexação lógica é especialmente poderosa: ao passar um vetor de <span class="in">`TRUE`</span>/<span class="in">`FALSE`</span>, o R retorna apenas os elementos correspondentes a <span class="in">`TRUE`</span>, sem necessidade de laços.</span>
-<span id="cb103-110"><a href="#cb103-110" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb103-111"><a href="#cb103-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-112"><a href="#cb103-112" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-113"><a href="#cb103-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-114"><a href="#cb103-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Frame</span></span>
-<span id="cb103-115"><a href="#cb103-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-116"><a href="#cb103-116" aria-hidden="true" tabindex="-1"></a>O data frame é uma estrutura tabular onde cada coluna pode ter um tipo diferente. É criado com <span class="in">`data.frame()`</span> e inspecionado com <span class="in">`str()`</span> e <span class="in">`summary()`</span>.</span>
-<span id="cb103-117"><a href="#cb103-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-118"><a href="#cb103-118" aria-hidden="true" tabindex="-1"></a>**Funções utilizadas:** <span class="in">`data.frame()`</span>, <span class="in">`str()`</span>, <span class="in">`summary()`</span></span>
-<span id="cb103-119"><a href="#cb103-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-122"><a href="#cb103-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-123"><a href="#cb103-123" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb103-124"><a href="#cb103-124" aria-hidden="true" tabindex="-1"></a>  <span class="at">aluno       =</span> alunos,</span>
-<span id="cb103-125"><a href="#cb103-125" aria-hidden="true" tabindex="-1"></a>  <span class="at">matematica  =</span> <span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">6.5</span>, <span class="fl">9.0</span>, <span class="fl">5.5</span>),</span>
-<span id="cb103-126"><a href="#cb103-126" aria-hidden="true" tabindex="-1"></a>  <span class="at">estatistica =</span> <span class="fu">c</span>(<span class="fl">8.0</span>, <span class="fl">7.5</span>, <span class="fl">6.0</span>, <span class="fl">9.5</span>, <span class="fl">6.0</span>),</span>
-<span id="cb103-127"><a href="#cb103-127" aria-hidden="true" tabindex="-1"></a>  <span class="at">programacao =</span> <span class="fu">c</span>(<span class="fl">7.0</span>, <span class="fl">8.5</span>, <span class="fl">7.0</span>, <span class="fl">9.0</span>, <span class="fl">5.0</span>)</span>
-<span id="cb103-128"><a href="#cb103-128" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb103-129"><a href="#cb103-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-130"><a href="#cb103-130" aria-hidden="true" tabindex="-1"></a>dados</span>
-<span id="cb103-131"><a href="#cb103-131" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dados)</span>
-<span id="cb103-132"><a href="#cb103-132" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dados)</span>
-<span id="cb103-133"><a href="#cb103-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-134"><a href="#cb103-134" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessando colunas</span></span>
-<span id="cb103-135"><a href="#cb103-135" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>matematica</span>
-<span id="cb103-136"><a href="#cb103-136" aria-hidden="true" tabindex="-1"></a>dados[, <span class="st">"estatistica"</span>]</span>
-<span id="cb103-137"><a href="#cb103-137" aria-hidden="true" tabindex="-1"></a>dados[, <span class="dv">2</span>]</span>
-<span id="cb103-138"><a href="#cb103-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-139"><a href="#cb103-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-140"><a href="#cb103-140" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-141"><a href="#cb103-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-142"><a href="#cb103-142" aria-hidden="true" tabindex="-1"></a><span class="fu">### `subset()` — Subconjuntos de Data Frames</span></span>
-<span id="cb103-143"><a href="#cb103-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-144"><a href="#cb103-144" aria-hidden="true" tabindex="-1"></a>Filtra linhas de um data frame com base em condições lógicas, podendo também selecionar colunas específicas. É uma alternativa mais legível à indexação direta com <span class="in">`[`</span>.</span>
-<span id="cb103-145"><a href="#cb103-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-146"><a href="#cb103-146" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`subset(x, subset, select)`</span></span>
+<span id="cb103-92"><a href="#cb103-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexação posicional</span></span>
+<span id="cb103-93"><a href="#cb103-93" aria-hidden="true" tabindex="-1"></a>notas[<span class="dv">1</span>]</span>
+<span id="cb103-94"><a href="#cb103-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-95"><a href="#cb103-95" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexação por nome</span></span>
+<span id="cb103-96"><a href="#cb103-96" aria-hidden="true" tabindex="-1"></a>notas[<span class="st">"Ana"</span>]</span>
+<span id="cb103-97"><a href="#cb103-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-98"><a href="#cb103-98" aria-hidden="true" tabindex="-1"></a><span class="co"># Indexação lógica</span></span>
+<span id="cb103-99"><a href="#cb103-99" aria-hidden="true" tabindex="-1"></a>aprovados <span class="ot">&lt;-</span> notas <span class="sc">&gt;=</span> <span class="dv">7</span></span>
+<span id="cb103-100"><a href="#cb103-100" aria-hidden="true" tabindex="-1"></a>notas[aprovados]   <span class="co"># aprovados</span></span>
+<span id="cb103-101"><a href="#cb103-101" aria-hidden="true" tabindex="-1"></a>notas[<span class="sc">!</span>aprovados]  <span class="co"># reprovados</span></span>
+<span id="cb103-102"><a href="#cb103-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-103"><a href="#cb103-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-104"><a href="#cb103-104" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-105"><a href="#cb103-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-106"><a href="#cb103-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data Frame</span></span>
+<span id="cb103-107"><a href="#cb103-107" aria-hidden="true" tabindex="-1"></a>O data frame é uma estrutura tabular onde cada coluna pode ter um tipo diferente. É criado com <span class="in">`data.frame()`</span> e inspecionado com <span class="in">`str()`</span> e <span class="in">`summary()`</span>.</span>
+<span id="cb103-108"><a href="#cb103-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-109"><a href="#cb103-109" aria-hidden="true" tabindex="-1"></a>**Funções utilizadas:** <span class="in">`data.frame()`</span>, <span class="in">`str()`</span>, <span class="in">`summary()`</span></span>
+<span id="cb103-110"><a href="#cb103-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-113"><a href="#cb103-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-114"><a href="#cb103-114" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb103-115"><a href="#cb103-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">aluno       =</span> alunos,</span>
+<span id="cb103-116"><a href="#cb103-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">matematica  =</span> <span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">6.5</span>, <span class="fl">9.0</span>, <span class="fl">5.5</span>),</span>
+<span id="cb103-117"><a href="#cb103-117" aria-hidden="true" tabindex="-1"></a>  <span class="at">estatistica =</span> <span class="fu">c</span>(<span class="fl">8.0</span>, <span class="fl">7.5</span>, <span class="fl">6.0</span>, <span class="fl">9.5</span>, <span class="fl">6.0</span>),</span>
+<span id="cb103-118"><a href="#cb103-118" aria-hidden="true" tabindex="-1"></a>  <span class="at">programacao =</span> <span class="fu">c</span>(<span class="fl">7.0</span>, <span class="fl">8.5</span>, <span class="fl">7.0</span>, <span class="fl">9.0</span>, <span class="fl">5.0</span>)</span>
+<span id="cb103-119"><a href="#cb103-119" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb103-120"><a href="#cb103-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-121"><a href="#cb103-121" aria-hidden="true" tabindex="-1"></a>dados</span>
+<span id="cb103-122"><a href="#cb103-122" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(dados)</span>
+<span id="cb103-123"><a href="#cb103-123" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dados)</span>
+<span id="cb103-124"><a href="#cb103-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-125"><a href="#cb103-125" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessando colunas</span></span>
+<span id="cb103-126"><a href="#cb103-126" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>matematica</span>
+<span id="cb103-127"><a href="#cb103-127" aria-hidden="true" tabindex="-1"></a>dados[, <span class="st">"estatistica"</span>]</span>
+<span id="cb103-128"><a href="#cb103-128" aria-hidden="true" tabindex="-1"></a>dados[, <span class="dv">2</span>]</span>
+<span id="cb103-129"><a href="#cb103-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-130"><a href="#cb103-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-131"><a href="#cb103-131" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-132"><a href="#cb103-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-133"><a href="#cb103-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### `subset()` — Subconjuntos de Data Frames</span></span>
+<span id="cb103-134"><a href="#cb103-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-135"><a href="#cb103-135" aria-hidden="true" tabindex="-1"></a>Filtra linhas de um data frame com base em condições lógicas, podendo também selecionar colunas específicas. É uma alternativa mais legível à indexação direta com <span class="in">`[`</span>.</span>
+<span id="cb103-136"><a href="#cb103-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-137"><a href="#cb103-137" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`subset(x, subset, select)`</span></span>
+<span id="cb103-138"><a href="#cb103-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-141"><a href="#cb103-141" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-142"><a href="#cb103-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Alunos com nota &gt;= 7 em matemática</span></span>
+<span id="cb103-143"><a href="#cb103-143" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(dados, matematica <span class="sc">&gt;=</span> <span class="dv">7</span>)</span>
+<span id="cb103-144"><a href="#cb103-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-145"><a href="#cb103-145" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecionando colunas específicas</span></span>
+<span id="cb103-146"><a href="#cb103-146" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(dados, <span class="at">select =</span> <span class="fu">c</span>(aluno, programacao))</span>
 <span id="cb103-147"><a href="#cb103-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-150"><a href="#cb103-150" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-151"><a href="#cb103-151" aria-hidden="true" tabindex="-1"></a><span class="co"># Alunos com nota &gt;= 7 em matemática</span></span>
-<span id="cb103-152"><a href="#cb103-152" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(dados, matematica <span class="sc">&gt;=</span> <span class="dv">7</span>)</span>
+<span id="cb103-148"><a href="#cb103-148" aria-hidden="true" tabindex="-1"></a><span class="co"># Condição múltipla</span></span>
+<span id="cb103-149"><a href="#cb103-149" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(dados, matematica <span class="sc">&gt;=</span> <span class="dv">7</span> <span class="sc">&amp;</span> estatistica <span class="sc">&gt;=</span> <span class="dv">7</span>)</span>
+<span id="cb103-150"><a href="#cb103-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-151"><a href="#cb103-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-152"><a href="#cb103-152" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-153"><a href="#cb103-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-154"><a href="#cb103-154" aria-hidden="true" tabindex="-1"></a><span class="co"># Selecionando colunas específicas</span></span>
-<span id="cb103-155"><a href="#cb103-155" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(dados, <span class="at">select =</span> <span class="fu">c</span>(aluno, programacao))</span>
-<span id="cb103-156"><a href="#cb103-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-157"><a href="#cb103-157" aria-hidden="true" tabindex="-1"></a><span class="co"># Condição múltipla</span></span>
-<span id="cb103-158"><a href="#cb103-158" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(dados, matematica <span class="sc">&gt;=</span> <span class="dv">7</span> <span class="sc">&amp;</span> estatistica <span class="sc">&gt;=</span> <span class="dv">7</span>)</span>
-<span id="cb103-159"><a href="#cb103-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-160"><a href="#cb103-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-161"><a href="#cb103-161" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-162"><a href="#cb103-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-163"><a href="#cb103-163" aria-hidden="true" tabindex="-1"></a><span class="fu">### Família `apply`</span></span>
-<span id="cb103-164"><a href="#cb103-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-165"><a href="#cb103-165" aria-hidden="true" tabindex="-1"></a>A família <span class="in">`apply`</span> aplica uma função sobre elementos de uma estrutura de dados, evitando laços explícitos e tornando o código mais conciso e eficiente.</span>
-<span id="cb103-166"><a href="#cb103-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-167"><a href="#cb103-167" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `apply()` — Aplicar sobre linhas ou colunas de matrizes/data frames</span></span>
-<span id="cb103-168"><a href="#cb103-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-169"><a href="#cb103-169" aria-hidden="true" tabindex="-1"></a>Aplica uma função sobre as linhas (<span class="in">`MARGIN = 1`</span>) ou colunas (<span class="in">`MARGIN = 2`</span>) de uma matriz ou data frame numérico.</span>
-<span id="cb103-170"><a href="#cb103-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-171"><a href="#cb103-171" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`apply(X, MARGIN, FUN)`</span></span>
-<span id="cb103-172"><a href="#cb103-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-175"><a href="#cb103-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-176"><a href="#cb103-176" aria-hidden="true" tabindex="-1"></a><span class="co"># Média por linha (por aluno)</span></span>
-<span id="cb103-177"><a href="#cb103-177" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">1</span>, mean)</span>
-<span id="cb103-178"><a href="#cb103-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-179"><a href="#cb103-179" aria-hidden="true" tabindex="-1"></a><span class="co"># Média por coluna (por disciplina)</span></span>
-<span id="cb103-180"><a href="#cb103-180" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">2</span>, mean)</span>
-<span id="cb103-181"><a href="#cb103-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-182"><a href="#cb103-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-183"><a href="#cb103-183" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-184"><a href="#cb103-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-185"><a href="#cb103-185" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `lapply()` — Aplicar sobre listas, retornar lista</span></span>
+<span id="cb103-154"><a href="#cb103-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### Família `apply`</span></span>
+<span id="cb103-155"><a href="#cb103-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-156"><a href="#cb103-156" aria-hidden="true" tabindex="-1"></a>A família <span class="in">`apply`</span> aplica uma função sobre elementos de uma estrutura de dados, evitando laços explícitos e tornando o código mais conciso e eficiente.</span>
+<span id="cb103-157"><a href="#cb103-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-158"><a href="#cb103-158" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `apply()` — Aplicar sobre linhas ou colunas de matrizes/data frames</span></span>
+<span id="cb103-159"><a href="#cb103-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-160"><a href="#cb103-160" aria-hidden="true" tabindex="-1"></a>Aplica uma função sobre as linhas (<span class="in">`MARGIN = 1`</span>) ou colunas (<span class="in">`MARGIN = 2`</span>) de uma matriz ou data frame numérico.</span>
+<span id="cb103-161"><a href="#cb103-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-162"><a href="#cb103-162" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`apply(X, MARGIN, FUN)`</span></span>
+<span id="cb103-163"><a href="#cb103-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-166"><a href="#cb103-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-167"><a href="#cb103-167" aria-hidden="true" tabindex="-1"></a><span class="co"># Média por linha (por aluno)</span></span>
+<span id="cb103-168"><a href="#cb103-168" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">1</span>, mean)</span>
+<span id="cb103-169"><a href="#cb103-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-170"><a href="#cb103-170" aria-hidden="true" tabindex="-1"></a><span class="co"># Média por coluna (por disciplina)</span></span>
+<span id="cb103-171"><a href="#cb103-171" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">2</span>, mean)</span>
+<span id="cb103-172"><a href="#cb103-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-173"><a href="#cb103-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-174"><a href="#cb103-174" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-175"><a href="#cb103-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-176"><a href="#cb103-176" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `lapply()` — Aplicar sobre listas, retornar lista</span></span>
+<span id="cb103-177"><a href="#cb103-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-178"><a href="#cb103-178" aria-hidden="true" tabindex="-1"></a>Aplica uma função a cada elemento de uma lista ou vetor e **sempre retorna uma lista**.</span>
+<span id="cb103-179"><a href="#cb103-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-180"><a href="#cb103-180" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`lapply(X, FUN)`</span></span>
+<span id="cb103-181"><a href="#cb103-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-184"><a href="#cb103-184" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-185"><a href="#cb103-185" aria-hidden="true" tabindex="-1"></a>lista_notas <span class="ot">&lt;-</span> dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span>
 <span id="cb103-186"><a href="#cb103-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-187"><a href="#cb103-187" aria-hidden="true" tabindex="-1"></a>Aplica uma função a cada elemento de uma lista ou vetor e **sempre retorna uma lista**.</span>
-<span id="cb103-188"><a href="#cb103-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-189"><a href="#cb103-189" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`lapply(X, FUN)`</span></span>
+<span id="cb103-187"><a href="#cb103-187" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna lista</span></span>
+<span id="cb103-188"><a href="#cb103-188" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(lista_notas, mean)</span>
+<span id="cb103-189"><a href="#cb103-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb103-190"><a href="#cb103-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-193"><a href="#cb103-193" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-194"><a href="#cb103-194" aria-hidden="true" tabindex="-1"></a>lista_notas <span class="ot">&lt;-</span> dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span>
-<span id="cb103-195"><a href="#cb103-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-196"><a href="#cb103-196" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna lista</span></span>
-<span id="cb103-197"><a href="#cb103-197" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(lista_notas, mean)</span>
-<span id="cb103-198"><a href="#cb103-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-199"><a href="#cb103-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-200"><a href="#cb103-200" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-201"><a href="#cb103-201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-202"><a href="#cb103-202" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `sapply()` — Aplicar sobre listas, simplificar resultado</span></span>
-<span id="cb103-203"><a href="#cb103-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-204"><a href="#cb103-204" aria-hidden="true" tabindex="-1"></a>Funciona como <span class="in">`lapply()`</span>, mas tenta **simplificar** o resultado — retornando um vetor ou matriz quando possível.</span>
+<span id="cb103-191"><a href="#cb103-191" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-192"><a href="#cb103-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-193"><a href="#cb103-193" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `sapply()` — Aplicar sobre listas, simplificar resultado</span></span>
+<span id="cb103-194"><a href="#cb103-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-195"><a href="#cb103-195" aria-hidden="true" tabindex="-1"></a>Funciona como <span class="in">`lapply()`</span>, mas tenta **simplificar** o resultado — retornando um vetor ou matriz quando possível.</span>
+<span id="cb103-196"><a href="#cb103-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-197"><a href="#cb103-197" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`sapply(X, FUN)`</span></span>
+<span id="cb103-198"><a href="#cb103-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-201"><a href="#cb103-201" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-202"><a href="#cb103-202" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna vetor nomeado</span></span>
+<span id="cb103-203"><a href="#cb103-203" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(lista_notas, mean)</span>
+<span id="cb103-204"><a href="#cb103-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb103-205"><a href="#cb103-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-206"><a href="#cb103-206" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`sapply(X, FUN)`</span></span>
+<span id="cb103-206"><a href="#cb103-206" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-207"><a href="#cb103-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-210"><a href="#cb103-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-211"><a href="#cb103-211" aria-hidden="true" tabindex="-1"></a><span class="co"># Retorna vetor nomeado</span></span>
-<span id="cb103-212"><a href="#cb103-212" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(lista_notas, mean)</span>
-<span id="cb103-213"><a href="#cb103-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-214"><a href="#cb103-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-215"><a href="#cb103-215" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="Diferença entre lapply e sapply"}</span>
-<span id="cb103-216"><a href="#cb103-216" aria-hidden="true" tabindex="-1"></a><span class="in">`lapply()`</span> sempre retorna uma lista; <span class="in">`sapply()`</span> simplifica o resultado para vetor ou matriz quando possível. Para resultados de comprimento uniforme, <span class="in">`sapply()`</span> é geralmente mais conveniente.</span>
-<span id="cb103-217"><a href="#cb103-217" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb103-218"><a href="#cb103-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-219"><a href="#cb103-219" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb103-208"><a href="#cb103-208" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `tapply()` — Aplicar por grupos</span></span>
+<span id="cb103-209"><a href="#cb103-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-210"><a href="#cb103-210" aria-hidden="true" tabindex="-1"></a>Aplica uma função a subconjuntos de um vetor, definidos por um fator de agrupamento. Retorna um array com os resultados por grupo.</span>
+<span id="cb103-211"><a href="#cb103-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-212"><a href="#cb103-212" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`tapply(X, INDEX, FUN)`</span></span>
+<span id="cb103-213"><a href="#cb103-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-216"><a href="#cb103-216" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-217"><a href="#cb103-217" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregando penguins</span></span>
+<span id="cb103-218"><a href="#cb103-218" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb103-219"><a href="#cb103-219" aria-hidden="true" tabindex="-1"></a>dados_limpos <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguins)</span>
 <span id="cb103-220"><a href="#cb103-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-221"><a href="#cb103-221" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `tapply()` — Aplicar por grupos</span></span>
-<span id="cb103-222"><a href="#cb103-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-223"><a href="#cb103-223" aria-hidden="true" tabindex="-1"></a>Aplica uma função a subconjuntos de um vetor, definidos por um fator de agrupamento. Retorna um array com os resultados por grupo.</span>
-<span id="cb103-224"><a href="#cb103-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-225"><a href="#cb103-225" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`tapply(X, INDEX, FUN)`</span></span>
-<span id="cb103-226"><a href="#cb103-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-229"><a href="#cb103-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-230"><a href="#cb103-230" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregando penguins</span></span>
-<span id="cb103-231"><a href="#cb103-231" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb103-232"><a href="#cb103-232" aria-hidden="true" tabindex="-1"></a>dados_limpos <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguins)</span>
+<span id="cb103-221"><a href="#cb103-221" aria-hidden="true" tabindex="-1"></a><span class="co"># Média do comprimento do bico por espécie</span></span>
+<span id="cb103-222"><a href="#cb103-222" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(dados_limpos<span class="sc">$</span>bill_length_mm,</span>
+<span id="cb103-223"><a href="#cb103-223" aria-hidden="true" tabindex="-1"></a>       dados_limpos<span class="sc">$</span>species,</span>
+<span id="cb103-224"><a href="#cb103-224" aria-hidden="true" tabindex="-1"></a>       mean)</span>
+<span id="cb103-225"><a href="#cb103-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-226"><a href="#cb103-226" aria-hidden="true" tabindex="-1"></a><span class="co"># Massa média por sexo</span></span>
+<span id="cb103-227"><a href="#cb103-227" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
+<span id="cb103-228"><a href="#cb103-228" aria-hidden="true" tabindex="-1"></a>       dados_limpos<span class="sc">$</span>sex,</span>
+<span id="cb103-229"><a href="#cb103-229" aria-hidden="true" tabindex="-1"></a>       mean)</span>
+<span id="cb103-230"><a href="#cb103-230" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-231"><a href="#cb103-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-232"><a href="#cb103-232" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-233"><a href="#cb103-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-234"><a href="#cb103-234" aria-hidden="true" tabindex="-1"></a><span class="co"># Média do comprimento do bico por espécie</span></span>
-<span id="cb103-235"><a href="#cb103-235" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(dados_limpos<span class="sc">$</span>bill_length_mm,</span>
-<span id="cb103-236"><a href="#cb103-236" aria-hidden="true" tabindex="-1"></a>       dados_limpos<span class="sc">$</span>species,</span>
-<span id="cb103-237"><a href="#cb103-237" aria-hidden="true" tabindex="-1"></a>       mean)</span>
-<span id="cb103-238"><a href="#cb103-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-239"><a href="#cb103-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Massa média por sexo</span></span>
-<span id="cb103-240"><a href="#cb103-240" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
-<span id="cb103-241"><a href="#cb103-241" aria-hidden="true" tabindex="-1"></a>       dados_limpos<span class="sc">$</span>sex,</span>
-<span id="cb103-242"><a href="#cb103-242" aria-hidden="true" tabindex="-1"></a>       mean)</span>
-<span id="cb103-243"><a href="#cb103-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-244"><a href="#cb103-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-245"><a href="#cb103-245" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-246"><a href="#cb103-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-247"><a href="#cb103-247" aria-hidden="true" tabindex="-1"></a><span class="fu">### `with()` — Avaliar expressões no contexto de um data frame</span></span>
+<span id="cb103-234"><a href="#cb103-234" aria-hidden="true" tabindex="-1"></a><span class="fu">### `with()` — Avaliar expressões no contexto de um data frame</span></span>
+<span id="cb103-235"><a href="#cb103-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-236"><a href="#cb103-236" aria-hidden="true" tabindex="-1"></a>Permite referenciar colunas de um data frame diretamente pelo nome, sem repetir <span class="in">`df$`</span> a cada vez. Não modifica o data frame original.</span>
+<span id="cb103-237"><a href="#cb103-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-238"><a href="#cb103-238" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`with(data, expr)`</span></span>
+<span id="cb103-239"><a href="#cb103-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-242"><a href="#cb103-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-243"><a href="#cb103-243" aria-hidden="true" tabindex="-1"></a><span class="co"># Sem with: necessário repetir o prefixo</span></span>
+<span id="cb103-244"><a href="#cb103-244" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dados_limpos<span class="sc">$</span>body_mass_g)</span>
+<span id="cb103-245"><a href="#cb103-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-246"><a href="#cb103-246" aria-hidden="true" tabindex="-1"></a><span class="co"># Com with: mais legível</span></span>
+<span id="cb103-247"><a href="#cb103-247" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dados_limpos, <span class="fu">mean</span>(body_mass_g))</span>
 <span id="cb103-248"><a href="#cb103-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-249"><a href="#cb103-249" aria-hidden="true" tabindex="-1"></a>Permite referenciar colunas de um data frame diretamente pelo nome, sem repetir <span class="in">`df$`</span> a cada vez. Não modifica o data frame original.</span>
-<span id="cb103-250"><a href="#cb103-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-251"><a href="#cb103-251" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`with(data, expr)`</span></span>
-<span id="cb103-252"><a href="#cb103-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-255"><a href="#cb103-255" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-256"><a href="#cb103-256" aria-hidden="true" tabindex="-1"></a><span class="co"># Sem with: necessário repetir o prefixo</span></span>
-<span id="cb103-257"><a href="#cb103-257" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(dados_limpos<span class="sc">$</span>body_mass_g)</span>
-<span id="cb103-258"><a href="#cb103-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-259"><a href="#cb103-259" aria-hidden="true" tabindex="-1"></a><span class="co"># Com with: mais legível</span></span>
-<span id="cb103-260"><a href="#cb103-260" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dados_limpos, <span class="fu">mean</span>(body_mass_g))</span>
+<span id="cb103-249"><a href="#cb103-249" aria-hidden="true" tabindex="-1"></a><span class="co"># Combinando with e tapply</span></span>
+<span id="cb103-250"><a href="#cb103-250" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dados_limpos,</span>
+<span id="cb103-251"><a href="#cb103-251" aria-hidden="true" tabindex="-1"></a>     <span class="fu">tapply</span>(body_mass_g, species, mean))</span>
+<span id="cb103-252"><a href="#cb103-252" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-253"><a href="#cb103-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-254"><a href="#cb103-254" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-255"><a href="#cb103-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-256"><a href="#cb103-256" aria-hidden="true" tabindex="-1"></a><span class="fu">### `within()` — Modificar variáveis dentro de um data frame</span></span>
+<span id="cb103-257"><a href="#cb103-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-258"><a href="#cb103-258" aria-hidden="true" tabindex="-1"></a>Semelhante ao <span class="in">`with()`</span>, mas permite **criar, modificar ou remover variáveis** dentro do data frame, retornando uma cópia modificada.</span>
+<span id="cb103-259"><a href="#cb103-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-260"><a href="#cb103-260" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`within(data, expr)`</span></span>
 <span id="cb103-261"><a href="#cb103-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-262"><a href="#cb103-262" aria-hidden="true" tabindex="-1"></a><span class="co"># Combinando with e tapply</span></span>
-<span id="cb103-263"><a href="#cb103-263" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(dados_limpos,</span>
-<span id="cb103-264"><a href="#cb103-264" aria-hidden="true" tabindex="-1"></a>     <span class="fu">tapply</span>(body_mass_g, species, mean))</span>
-<span id="cb103-265"><a href="#cb103-265" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-266"><a href="#cb103-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-267"><a href="#cb103-267" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-268"><a href="#cb103-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-269"><a href="#cb103-269" aria-hidden="true" tabindex="-1"></a><span class="fu">### `within()` — Modificar variáveis dentro de um data frame</span></span>
-<span id="cb103-270"><a href="#cb103-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-271"><a href="#cb103-271" aria-hidden="true" tabindex="-1"></a>Semelhante ao <span class="in">`with()`</span>, mas permite **criar, modificar ou remover variáveis** dentro do data frame, retornando uma cópia modificada.</span>
-<span id="cb103-272"><a href="#cb103-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-273"><a href="#cb103-273" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`within(data, expr)`</span></span>
+<span id="cb103-264"><a href="#cb103-264" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-265"><a href="#cb103-265" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb103-266"><a href="#cb103-266" aria-hidden="true" tabindex="-1"></a>                 <span class="at">b =</span> <span class="fu">rep</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">each =</span> <span class="dv">2</span>))</span>
+<span id="cb103-267"><a href="#cb103-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-268"><a href="#cb103-268" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando nova variável de forma organizada</span></span>
+<span id="cb103-269"><a href="#cb103-269" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">within</span>(df, {</span>
+<span id="cb103-270"><a href="#cb103-270" aria-hidden="true" tabindex="-1"></a>  nova <span class="ot">&lt;-</span> a <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb103-271"><a href="#cb103-271" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb103-272"><a href="#cb103-272" aria-hidden="true" tabindex="-1"></a>df2</span>
+<span id="cb103-273"><a href="#cb103-273" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb103-274"><a href="#cb103-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-277"><a href="#cb103-277" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-278"><a href="#cb103-278" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
-<span id="cb103-279"><a href="#cb103-279" aria-hidden="true" tabindex="-1"></a>                 <span class="at">b =</span> <span class="fu">rep</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">each =</span> <span class="dv">2</span>))</span>
+<span id="cb103-275"><a href="#cb103-275" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-276"><a href="#cb103-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-277"><a href="#cb103-277" aria-hidden="true" tabindex="-1"></a><span class="fu">### `by()` — Aplicar função por grupos (versão generalizada)</span></span>
+<span id="cb103-278"><a href="#cb103-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-279"><a href="#cb103-279" aria-hidden="true" tabindex="-1"></a>Aplica uma função a subgrupos de um data frame. É mais geral do que <span class="in">`tapply()`</span> pois aceita múltiplas variáveis de agrupamento e opera sobre data frames inteiros (não apenas vetores).</span>
 <span id="cb103-280"><a href="#cb103-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-281"><a href="#cb103-281" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando nova variável de forma organizada</span></span>
-<span id="cb103-282"><a href="#cb103-282" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">within</span>(df, {</span>
-<span id="cb103-283"><a href="#cb103-283" aria-hidden="true" tabindex="-1"></a>  nova <span class="ot">&lt;-</span> a <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb103-284"><a href="#cb103-284" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb103-285"><a href="#cb103-285" aria-hidden="true" tabindex="-1"></a>df2</span>
-<span id="cb103-286"><a href="#cb103-286" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-287"><a href="#cb103-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-288"><a href="#cb103-288" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="with() vs within()"}</span>
-<span id="cb103-289"><a href="#cb103-289" aria-hidden="true" tabindex="-1"></a><span class="in">`with()`</span> avalia uma expressão no contexto do data frame sem modificá-lo. <span class="in">`within()`</span> permite criar ou modificar variáveis e retorna o data frame atualizado.</span>
-<span id="cb103-290"><a href="#cb103-290" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb103-291"><a href="#cb103-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-292"><a href="#cb103-292" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-293"><a href="#cb103-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-294"><a href="#cb103-294" aria-hidden="true" tabindex="-1"></a><span class="fu">### `by()` — Aplicar função por grupos (versão generalizada)</span></span>
-<span id="cb103-295"><a href="#cb103-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-296"><a href="#cb103-296" aria-hidden="true" tabindex="-1"></a>Aplica uma função a subgrupos de um data frame. É mais geral do que <span class="in">`tapply()`</span> pois aceita múltiplas variáveis de agrupamento e opera sobre data frames inteiros (não apenas vetores).</span>
-<span id="cb103-297"><a href="#cb103-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-298"><a href="#cb103-298" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`by(data, INDICES, FUN)`</span></span>
-<span id="cb103-299"><a href="#cb103-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-302"><a href="#cb103-302" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-303"><a href="#cb103-303" aria-hidden="true" tabindex="-1"></a><span class="co"># Média da massa por espécie</span></span>
-<span id="cb103-304"><a href="#cb103-304" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
-<span id="cb103-305"><a href="#cb103-305" aria-hidden="true" tabindex="-1"></a>   dados_limpos<span class="sc">$</span>species,</span>
-<span id="cb103-306"><a href="#cb103-306" aria-hidden="true" tabindex="-1"></a>   mean)</span>
-<span id="cb103-307"><a href="#cb103-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-308"><a href="#cb103-308" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupamento por espécie e sexo</span></span>
-<span id="cb103-309"><a href="#cb103-309" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
-<span id="cb103-310"><a href="#cb103-310" aria-hidden="true" tabindex="-1"></a>   dados_limpos[, <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"sex"</span>)],</span>
-<span id="cb103-311"><a href="#cb103-311" aria-hidden="true" tabindex="-1"></a>   mean)</span>
-<span id="cb103-312"><a href="#cb103-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-281"><a href="#cb103-281" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`by(data, INDICES, FUN)`</span></span>
+<span id="cb103-282"><a href="#cb103-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-285"><a href="#cb103-285" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-286"><a href="#cb103-286" aria-hidden="true" tabindex="-1"></a><span class="co"># Média da massa por espécie</span></span>
+<span id="cb103-287"><a href="#cb103-287" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
+<span id="cb103-288"><a href="#cb103-288" aria-hidden="true" tabindex="-1"></a>   dados_limpos<span class="sc">$</span>species,</span>
+<span id="cb103-289"><a href="#cb103-289" aria-hidden="true" tabindex="-1"></a>   mean)</span>
+<span id="cb103-290"><a href="#cb103-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-291"><a href="#cb103-291" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupamento por espécie e sexo</span></span>
+<span id="cb103-292"><a href="#cb103-292" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
+<span id="cb103-293"><a href="#cb103-293" aria-hidden="true" tabindex="-1"></a>   dados_limpos[, <span class="fu">c</span>(<span class="st">"species"</span>, <span class="st">"sex"</span>)],</span>
+<span id="cb103-294"><a href="#cb103-294" aria-hidden="true" tabindex="-1"></a>   mean)</span>
+<span id="cb103-295"><a href="#cb103-295" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-296"><a href="#cb103-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-297"><a href="#cb103-297" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-298"><a href="#cb103-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-299"><a href="#cb103-299" aria-hidden="true" tabindex="-1"></a><span class="fu">### `ave()` — Estatística por grupo no mesmo tamanho do vetor</span></span>
+<span id="cb103-300"><a href="#cb103-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-301"><a href="#cb103-301" aria-hidden="true" tabindex="-1"></a>Calcula uma estatística por grupo e **retorna um vetor do mesmo comprimento** do vetor original, com o resultado repetido para cada observação do grupo. Útil para comparar cada indivíduo com a média do seu grupo.</span>
+<span id="cb103-302"><a href="#cb103-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-303"><a href="#cb103-303" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`ave(x, ..., FUN = mean)`</span></span>
+<span id="cb103-304"><a href="#cb103-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-307"><a href="#cb103-307" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-308"><a href="#cb103-308" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb103-309"><a href="#cb103-309" aria-hidden="true" tabindex="-1"></a>                 <span class="at">b =</span> <span class="fu">rep</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">each =</span> <span class="dv">2</span>))</span>
+<span id="cb103-310"><a href="#cb103-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-311"><a href="#cb103-311" aria-hidden="true" tabindex="-1"></a><span class="co"># Média de 'a' por grupo 'b', repetida para cada linha</span></span>
+<span id="cb103-312"><a href="#cb103-312" aria-hidden="true" tabindex="-1"></a><span class="fu">ave</span>(df<span class="sc">$</span>a, df<span class="sc">$</span>b, <span class="at">FUN =</span> mean)</span>
 <span id="cb103-313"><a href="#cb103-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-314"><a href="#cb103-314" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip title="by() vs tapply()"}</span>
-<span id="cb103-315"><a href="#cb103-315" aria-hidden="true" tabindex="-1"></a>Ambas aplicam funções por grupo, mas <span class="in">`by()`</span> aceita data frames inteiros como primeiro argumento e lida melhor com agrupamentos múltiplos complexos. <span class="in">`tapply()`</span> opera sobre vetores e retorna arrays, sendo mais adequado para agrupamentos simples.</span>
-<span id="cb103-316"><a href="#cb103-316" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb103-317"><a href="#cb103-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-318"><a href="#cb103-318" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-319"><a href="#cb103-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-320"><a href="#cb103-320" aria-hidden="true" tabindex="-1"></a><span class="fu">### `ave()` — Estatística por grupo no mesmo tamanho do vetor</span></span>
-<span id="cb103-321"><a href="#cb103-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-322"><a href="#cb103-322" aria-hidden="true" tabindex="-1"></a>Calcula uma estatística por grupo e **retorna um vetor do mesmo comprimento** do vetor original, com o resultado repetido para cada observação do grupo. Útil para comparar cada indivíduo com a média do seu grupo.</span>
-<span id="cb103-323"><a href="#cb103-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-324"><a href="#cb103-324" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`ave(x, ..., FUN = mean)`</span></span>
+<span id="cb103-314"><a href="#cb103-314" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicação prática: comparar cada pinguim com a média da espécie</span></span>
+<span id="cb103-315"><a href="#cb103-315" aria-hidden="true" tabindex="-1"></a>dados_limpos<span class="sc">$</span>media_por_especie <span class="ot">&lt;-</span> <span class="fu">ave</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
+<span id="cb103-316"><a href="#cb103-316" aria-hidden="true" tabindex="-1"></a>                                      dados_limpos<span class="sc">$</span>species,</span>
+<span id="cb103-317"><a href="#cb103-317" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">FUN =</span> mean)</span>
+<span id="cb103-318"><a href="#cb103-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-319"><a href="#cb103-319" aria-hidden="true" tabindex="-1"></a><span class="co"># Identificar quem está acima da média da própria espécie</span></span>
+<span id="cb103-320"><a href="#cb103-320" aria-hidden="true" tabindex="-1"></a>dados_limpos<span class="sc">$</span>acima_media <span class="ot">&lt;-</span> dados_limpos<span class="sc">$</span>body_mass_g <span class="sc">&gt;</span></span>
+<span id="cb103-321"><a href="#cb103-321" aria-hidden="true" tabindex="-1"></a>  dados_limpos<span class="sc">$</span>media_por_especie</span>
+<span id="cb103-322"><a href="#cb103-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-323"><a href="#cb103-323" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dados_limpos<span class="sc">$</span>acima_media)</span>
+<span id="cb103-324"><a href="#cb103-324" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb103-325"><a href="#cb103-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-328"><a href="#cb103-328" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-329"><a href="#cb103-329" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
-<span id="cb103-330"><a href="#cb103-330" aria-hidden="true" tabindex="-1"></a>                 <span class="at">b =</span> <span class="fu">rep</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">each =</span> <span class="dv">2</span>))</span>
+<span id="cb103-326"><a href="#cb103-326" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-327"><a href="#cb103-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-328"><a href="#cb103-328" aria-hidden="true" tabindex="-1"></a><span class="fu">### `aggregate()` — Resumir dados por grupo em data frame</span></span>
+<span id="cb103-329"><a href="#cb103-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-330"><a href="#cb103-330" aria-hidden="true" tabindex="-1"></a>Agrega dados calculando uma estatística por grupo e retorna um **data frame** com os resultados. Suporta fórmulas (<span class="in">`y ~ x`</span>) para especificar variável e agrupamento.</span>
 <span id="cb103-331"><a href="#cb103-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-332"><a href="#cb103-332" aria-hidden="true" tabindex="-1"></a><span class="co"># Média de 'a' por grupo 'b', repetida para cada linha</span></span>
-<span id="cb103-333"><a href="#cb103-333" aria-hidden="true" tabindex="-1"></a><span class="fu">ave</span>(df<span class="sc">$</span>a, df<span class="sc">$</span>b, <span class="at">FUN =</span> mean)</span>
-<span id="cb103-334"><a href="#cb103-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-335"><a href="#cb103-335" aria-hidden="true" tabindex="-1"></a><span class="co"># Aplicação prática: comparar cada pinguim com a média da espécie</span></span>
-<span id="cb103-336"><a href="#cb103-336" aria-hidden="true" tabindex="-1"></a>dados_limpos<span class="sc">$</span>media_por_especie <span class="ot">&lt;-</span> <span class="fu">ave</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
-<span id="cb103-337"><a href="#cb103-337" aria-hidden="true" tabindex="-1"></a>                                      dados_limpos<span class="sc">$</span>species,</span>
-<span id="cb103-338"><a href="#cb103-338" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">FUN =</span> mean)</span>
-<span id="cb103-339"><a href="#cb103-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-340"><a href="#cb103-340" aria-hidden="true" tabindex="-1"></a><span class="co"># Identificar quem está acima da média da própria espécie</span></span>
-<span id="cb103-341"><a href="#cb103-341" aria-hidden="true" tabindex="-1"></a>dados_limpos<span class="sc">$</span>acima_media <span class="ot">&lt;-</span> dados_limpos<span class="sc">$</span>body_mass_g <span class="sc">&gt;</span></span>
-<span id="cb103-342"><a href="#cb103-342" aria-hidden="true" tabindex="-1"></a>  dados_limpos<span class="sc">$</span>media_por_especie</span>
-<span id="cb103-343"><a href="#cb103-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-344"><a href="#cb103-344" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dados_limpos<span class="sc">$</span>acima_media)</span>
-<span id="cb103-345"><a href="#cb103-345" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-332"><a href="#cb103-332" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`aggregate(x ~ group, data, FUN)`</span></span>
+<span id="cb103-333"><a href="#cb103-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-336"><a href="#cb103-336" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-337"><a href="#cb103-337" aria-hidden="true" tabindex="-1"></a><span class="co"># Média de uma variável por espécie</span></span>
+<span id="cb103-338"><a href="#cb103-338" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(body_mass_g <span class="sc">~</span> species,</span>
+<span id="cb103-339"><a href="#cb103-339" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> dados_limpos,</span>
+<span id="cb103-340"><a href="#cb103-340" aria-hidden="true" tabindex="-1"></a>          <span class="at">FUN =</span> mean)</span>
+<span id="cb103-341"><a href="#cb103-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-342"><a href="#cb103-342" aria-hidden="true" tabindex="-1"></a><span class="co"># Média por espécie e sexo</span></span>
+<span id="cb103-343"><a href="#cb103-343" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(body_mass_g <span class="sc">~</span> species <span class="sc">+</span> sex,</span>
+<span id="cb103-344"><a href="#cb103-344" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> dados_limpos,</span>
+<span id="cb103-345"><a href="#cb103-345" aria-hidden="true" tabindex="-1"></a>          <span class="at">FUN =</span> mean)</span>
 <span id="cb103-346"><a href="#cb103-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-347"><a href="#cb103-347" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-348"><a href="#cb103-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-349"><a href="#cb103-349" aria-hidden="true" tabindex="-1"></a><span class="fu">### `aggregate()` — Resumir dados por grupo em data frame</span></span>
-<span id="cb103-350"><a href="#cb103-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-351"><a href="#cb103-351" aria-hidden="true" tabindex="-1"></a>Agrega dados calculando uma estatística por grupo e retorna um **data frame** com os resultados. Suporta fórmulas (<span class="in">`y ~ x`</span>) para especificar variável e agrupamento.</span>
+<span id="cb103-347"><a href="#cb103-347" aria-hidden="true" tabindex="-1"></a><span class="co"># Múltiplas variáveis simultaneamente</span></span>
+<span id="cb103-348"><a href="#cb103-348" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(bill_length_mm, flipper_length_mm, body_mass_g) <span class="sc">~</span> species,</span>
+<span id="cb103-349"><a href="#cb103-349" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> dados_limpos,</span>
+<span id="cb103-350"><a href="#cb103-350" aria-hidden="true" tabindex="-1"></a>          <span class="at">FUN =</span> mean)</span>
+<span id="cb103-351"><a href="#cb103-351" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb103-352"><a href="#cb103-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-353"><a href="#cb103-353" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`aggregate(x ~ group, data, FUN)`</span></span>
+<span id="cb103-353"><a href="#cb103-353" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-354"><a href="#cb103-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-357"><a href="#cb103-357" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-358"><a href="#cb103-358" aria-hidden="true" tabindex="-1"></a><span class="co"># Média de uma variável por espécie</span></span>
-<span id="cb103-359"><a href="#cb103-359" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(body_mass_g <span class="sc">~</span> species,</span>
-<span id="cb103-360"><a href="#cb103-360" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> dados_limpos,</span>
-<span id="cb103-361"><a href="#cb103-361" aria-hidden="true" tabindex="-1"></a>          <span class="at">FUN =</span> mean)</span>
-<span id="cb103-362"><a href="#cb103-362" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-363"><a href="#cb103-363" aria-hidden="true" tabindex="-1"></a><span class="co"># Média por espécie e sexo</span></span>
-<span id="cb103-364"><a href="#cb103-364" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(body_mass_g <span class="sc">~</span> species <span class="sc">+</span> sex,</span>
-<span id="cb103-365"><a href="#cb103-365" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> dados_limpos,</span>
-<span id="cb103-366"><a href="#cb103-366" aria-hidden="true" tabindex="-1"></a>          <span class="at">FUN =</span> mean)</span>
-<span id="cb103-367"><a href="#cb103-367" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-368"><a href="#cb103-368" aria-hidden="true" tabindex="-1"></a><span class="co"># Múltiplas variáveis simultaneamente</span></span>
-<span id="cb103-369"><a href="#cb103-369" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(<span class="fu">cbind</span>(bill_length_mm, flipper_length_mm, body_mass_g) <span class="sc">~</span> species,</span>
-<span id="cb103-370"><a href="#cb103-370" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> dados_limpos,</span>
-<span id="cb103-371"><a href="#cb103-371" aria-hidden="true" tabindex="-1"></a>          <span class="at">FUN =</span> mean)</span>
-<span id="cb103-372"><a href="#cb103-372" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-373"><a href="#cb103-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-374"><a href="#cb103-374" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-375"><a href="#cb103-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-376"><a href="#cb103-376" aria-hidden="true" tabindex="-1"></a><span class="fu">### `split()` — Dividir data frame em lista por grupos</span></span>
-<span id="cb103-377"><a href="#cb103-377" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-378"><a href="#cb103-378" aria-hidden="true" tabindex="-1"></a>Divide um data frame (ou vetor) em uma **lista de subconjuntos**, um por nível do fator de agrupamento. Frequentemente combinado com <span class="in">`lapply()`</span> ou <span class="in">`sapply()`</span>.</span>
-<span id="cb103-379"><a href="#cb103-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-380"><a href="#cb103-380" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`split(x, f)`</span></span>
-<span id="cb103-381"><a href="#cb103-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-384"><a href="#cb103-384" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-385"><a href="#cb103-385" aria-hidden="true" tabindex="-1"></a><span class="co"># Dividindo por espécie</span></span>
-<span id="cb103-386"><a href="#cb103-386" aria-hidden="true" tabindex="-1"></a>dados_split <span class="ot">&lt;-</span> <span class="fu">split</span>(dados_limpos, dados_limpos<span class="sc">$</span>species)</span>
-<span id="cb103-387"><a href="#cb103-387" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-388"><a href="#cb103-388" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes dos grupos</span></span>
-<span id="cb103-389"><a href="#cb103-389" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dados_split)</span>
-<span id="cb103-390"><a href="#cb103-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-391"><a href="#cb103-391" aria-hidden="true" tabindex="-1"></a><span class="co"># Média da massa em cada grupo</span></span>
-<span id="cb103-392"><a href="#cb103-392" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(dados_split, <span class="cf">function</span>(df) <span class="fu">mean</span>(df<span class="sc">$</span>body_mass_g))</span>
-<span id="cb103-393"><a href="#cb103-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-394"><a href="#cb103-394" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de observações por grupo</span></span>
-<span id="cb103-395"><a href="#cb103-395" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(dados_split, nrow)</span>
-<span id="cb103-396"><a href="#cb103-396" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-397"><a href="#cb103-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-398"><a href="#cb103-398" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-399"><a href="#cb103-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-400"><a href="#cb103-400" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estruturas de Controle</span></span>
-<span id="cb103-401"><a href="#cb103-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-402"><a href="#cb103-402" aria-hidden="true" tabindex="-1"></a>As estruturas de controle direcionam o fluxo de execução do programa. A aula apresentou <span class="in">`if/else`</span>, <span class="in">`for`</span> e <span class="in">`while`</span>, comparando-os com as abordagens vetorizadas da família <span class="in">`apply`</span>.</span>
-<span id="cb103-403"><a href="#cb103-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-404"><a href="#cb103-404" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `if` / `else`</span></span>
-<span id="cb103-405"><a href="#cb103-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-406"><a href="#cb103-406" aria-hidden="true" tabindex="-1"></a>Executa um bloco de código condicionalmente.</span>
-<span id="cb103-407"><a href="#cb103-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-410"><a href="#cb103-410" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-411"><a href="#cb103-411" aria-hidden="true" tabindex="-1"></a>nota_media_ana <span class="ot">&lt;-</span> dados<span class="sc">$</span>media[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">7.0</span>))</span>
-<span id="cb103-412"><a href="#cb103-412" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-413"><a href="#cb103-413" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (nota_media_ana <span class="sc">&gt;=</span> <span class="dv">7</span>) {</span>
-<span id="cb103-414"><a href="#cb103-414" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Ana está aprovada"</span>)</span>
-<span id="cb103-415"><a href="#cb103-415" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb103-416"><a href="#cb103-416" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Ana está reprovada"</span>)</span>
+<span id="cb103-355"><a href="#cb103-355" aria-hidden="true" tabindex="-1"></a><span class="fu">### `split()` — Dividir data frame em lista por grupos</span></span>
+<span id="cb103-356"><a href="#cb103-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-357"><a href="#cb103-357" aria-hidden="true" tabindex="-1"></a>Divide um data frame (ou vetor) em uma **lista de subconjuntos**, um por nível do fator de agrupamento. Frequentemente combinado com <span class="in">`lapply()`</span> ou <span class="in">`sapply()`</span>.</span>
+<span id="cb103-358"><a href="#cb103-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-359"><a href="#cb103-359" aria-hidden="true" tabindex="-1"></a>**Sintaxe:** <span class="in">`split(x, f)`</span></span>
+<span id="cb103-360"><a href="#cb103-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-363"><a href="#cb103-363" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-364"><a href="#cb103-364" aria-hidden="true" tabindex="-1"></a><span class="co"># Dividindo por espécie</span></span>
+<span id="cb103-365"><a href="#cb103-365" aria-hidden="true" tabindex="-1"></a>dados_split <span class="ot">&lt;-</span> <span class="fu">split</span>(dados_limpos, dados_limpos<span class="sc">$</span>species)</span>
+<span id="cb103-366"><a href="#cb103-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-367"><a href="#cb103-367" aria-hidden="true" tabindex="-1"></a><span class="co"># Nomes dos grupos</span></span>
+<span id="cb103-368"><a href="#cb103-368" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(dados_split)</span>
+<span id="cb103-369"><a href="#cb103-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-370"><a href="#cb103-370" aria-hidden="true" tabindex="-1"></a><span class="co"># Média da massa em cada grupo</span></span>
+<span id="cb103-371"><a href="#cb103-371" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(dados_split, <span class="cf">function</span>(df) <span class="fu">mean</span>(df<span class="sc">$</span>body_mass_g))</span>
+<span id="cb103-372"><a href="#cb103-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-373"><a href="#cb103-373" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de observações por grupo</span></span>
+<span id="cb103-374"><a href="#cb103-374" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(dados_split, nrow)</span>
+<span id="cb103-375"><a href="#cb103-375" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-376"><a href="#cb103-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-377"><a href="#cb103-377" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-378"><a href="#cb103-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-379"><a href="#cb103-379" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estruturas de Controle</span></span>
+<span id="cb103-380"><a href="#cb103-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-381"><a href="#cb103-381" aria-hidden="true" tabindex="-1"></a>As estruturas de controle direcionam o fluxo de execução do programa. A aula apresentou <span class="in">`if/else`</span>, <span class="in">`for`</span> e <span class="in">`while`</span>, comparando-os com as abordagens vetorizadas da família <span class="in">`apply`</span>.</span>
+<span id="cb103-382"><a href="#cb103-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-383"><a href="#cb103-383" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `if` / `else`</span></span>
+<span id="cb103-384"><a href="#cb103-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-385"><a href="#cb103-385" aria-hidden="true" tabindex="-1"></a>Executa um bloco de código condicionalmente.</span>
+<span id="cb103-386"><a href="#cb103-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-389"><a href="#cb103-389" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-390"><a href="#cb103-390" aria-hidden="true" tabindex="-1"></a>nota_media_ana <span class="ot">&lt;-</span> dados<span class="sc">$</span>media[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">7.0</span>))</span>
+<span id="cb103-391"><a href="#cb103-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-392"><a href="#cb103-392" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (nota_media_ana <span class="sc">&gt;=</span> <span class="dv">7</span>) {</span>
+<span id="cb103-393"><a href="#cb103-393" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Ana está aprovada"</span>)</span>
+<span id="cb103-394"><a href="#cb103-394" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb103-395"><a href="#cb103-395" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Ana está reprovada"</span>)</span>
+<span id="cb103-396"><a href="#cb103-396" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb103-397"><a href="#cb103-397" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-398"><a href="#cb103-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-399"><a href="#cb103-399" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-400"><a href="#cb103-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-401"><a href="#cb103-401" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `for` — Laço com iteração explícita</span></span>
+<span id="cb103-402"><a href="#cb103-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-403"><a href="#cb103-403" aria-hidden="true" tabindex="-1"></a>Repete um bloco para cada elemento de um vetor ou lista. A aula demonstrou que <span class="in">`apply`</span> é preferível ao <span class="in">`for`</span> em muitos casos práticos.</span>
+<span id="cb103-404"><a href="#cb103-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-407"><a href="#cb103-407" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-408"><a href="#cb103-408" aria-hidden="true" tabindex="-1"></a><span class="co"># Classificando alunos com for + if (forma explícita)</span></span>
+<span id="cb103-409"><a href="#cb103-409" aria-hidden="true" tabindex="-1"></a>situacao_manual <span class="ot">&lt;-</span> <span class="fu">character</span>(<span class="fu">nrow</span>(dados))</span>
+<span id="cb103-410"><a href="#cb103-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-411"><a href="#cb103-411" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(dados)) {</span>
+<span id="cb103-412"><a href="#cb103-412" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (dados<span class="sc">$</span>media[i] <span class="sc">&gt;=</span> <span class="dv">7</span>) {</span>
+<span id="cb103-413"><a href="#cb103-413" aria-hidden="true" tabindex="-1"></a>    situacao_manual[i] <span class="ot">&lt;-</span> <span class="st">"Aprovado"</span></span>
+<span id="cb103-414"><a href="#cb103-414" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb103-415"><a href="#cb103-415" aria-hidden="true" tabindex="-1"></a>    situacao_manual[i] <span class="ot">&lt;-</span> <span class="st">"Reprovado"</span></span>
+<span id="cb103-416"><a href="#cb103-416" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb103-417"><a href="#cb103-417" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb103-418"><a href="#cb103-418" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-419"><a href="#cb103-419" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-420"><a href="#cb103-420" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-421"><a href="#cb103-421" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-422"><a href="#cb103-422" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `for` — Laço com iteração explícita</span></span>
-<span id="cb103-423"><a href="#cb103-423" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-424"><a href="#cb103-424" aria-hidden="true" tabindex="-1"></a>Repete um bloco para cada elemento de um vetor ou lista. A aula demonstrou que <span class="in">`apply`</span> é preferível ao <span class="in">`for`</span> em muitos casos práticos.</span>
-<span id="cb103-425"><a href="#cb103-425" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-428"><a href="#cb103-428" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-429"><a href="#cb103-429" aria-hidden="true" tabindex="-1"></a><span class="co"># Classificando alunos com for + if (forma explícita)</span></span>
-<span id="cb103-430"><a href="#cb103-430" aria-hidden="true" tabindex="-1"></a>situacao_manual <span class="ot">&lt;-</span> <span class="fu">character</span>(<span class="fu">nrow</span>(dados))</span>
-<span id="cb103-431"><a href="#cb103-431" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-432"><a href="#cb103-432" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(dados)) {</span>
-<span id="cb103-433"><a href="#cb103-433" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (dados<span class="sc">$</span>media[i] <span class="sc">&gt;=</span> <span class="dv">7</span>) {</span>
-<span id="cb103-434"><a href="#cb103-434" aria-hidden="true" tabindex="-1"></a>    situacao_manual[i] <span class="ot">&lt;-</span> <span class="st">"Aprovado"</span></span>
-<span id="cb103-435"><a href="#cb103-435" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb103-436"><a href="#cb103-436" aria-hidden="true" tabindex="-1"></a>    situacao_manual[i] <span class="ot">&lt;-</span> <span class="st">"Reprovado"</span></span>
-<span id="cb103-437"><a href="#cb103-437" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb103-438"><a href="#cb103-438" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb103-439"><a href="#cb103-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-440"><a href="#cb103-440" aria-hidden="true" tabindex="-1"></a>situacao_manual</span>
-<span id="cb103-441"><a href="#cb103-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-442"><a href="#cb103-442" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalente vetorizado com ifelse (preferível)</span></span>
-<span id="cb103-443"><a href="#cb103-443" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(dados<span class="sc">$</span>media <span class="sc">&gt;=</span> <span class="dv">7</span>, <span class="st">"Aprovado"</span>, <span class="st">"Reprovado"</span>)</span>
-<span id="cb103-444"><a href="#cb103-444" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-445"><a href="#cb103-445" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-446"><a href="#cb103-446" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb103-418"><a href="#cb103-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-419"><a href="#cb103-419" aria-hidden="true" tabindex="-1"></a>situacao_manual</span>
+<span id="cb103-420"><a href="#cb103-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-421"><a href="#cb103-421" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalente vetorizado com ifelse (preferível)</span></span>
+<span id="cb103-422"><a href="#cb103-422" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(dados<span class="sc">$</span>media <span class="sc">&gt;=</span> <span class="dv">7</span>, <span class="st">"Aprovado"</span>, <span class="st">"Reprovado"</span>)</span>
+<span id="cb103-423"><a href="#cb103-423" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-424"><a href="#cb103-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-425"><a href="#cb103-425" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-426"><a href="#cb103-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-427"><a href="#cb103-427" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `while` — Laço com condição de parada</span></span>
+<span id="cb103-428"><a href="#cb103-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-429"><a href="#cb103-429" aria-hidden="true" tabindex="-1"></a>Repete um bloco enquanto uma condição for verdadeira.</span>
+<span id="cb103-430"><a href="#cb103-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-433"><a href="#cb103-433" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-434"><a href="#cb103-434" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando crescimento até atingir valor alvo</span></span>
+<span id="cb103-435"><a href="#cb103-435" aria-hidden="true" tabindex="-1"></a>media_simulada <span class="ot">&lt;-</span> <span class="fl">5.0</span></span>
+<span id="cb103-436"><a href="#cb103-436" aria-hidden="true" tabindex="-1"></a>incremento     <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
+<span id="cb103-437"><a href="#cb103-437" aria-hidden="true" tabindex="-1"></a>iteracoes      <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb103-438"><a href="#cb103-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-439"><a href="#cb103-439" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (media_simulada <span class="sc">&lt;</span> <span class="dv">7</span>) {</span>
+<span id="cb103-440"><a href="#cb103-440" aria-hidden="true" tabindex="-1"></a>  media_simulada <span class="ot">&lt;-</span> media_simulada <span class="sc">+</span> incremento</span>
+<span id="cb103-441"><a href="#cb103-441" aria-hidden="true" tabindex="-1"></a>  iteracoes      <span class="ot">&lt;-</span> iteracoes <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb103-442"><a href="#cb103-442" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb103-443"><a href="#cb103-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-444"><a href="#cb103-444" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Média final:"</span>, <span class="fu">round</span>(media_simulada, <span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb103-445"><a href="#cb103-445" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Iterações necessárias:"</span>, iteracoes, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb103-446"><a href="#cb103-446" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb103-447"><a href="#cb103-447" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-448"><a href="#cb103-448" aria-hidden="true" tabindex="-1"></a><span class="fu">#### `while` — Laço com condição de parada</span></span>
+<span id="cb103-448"><a href="#cb103-448" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-449"><a href="#cb103-449" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-450"><a href="#cb103-450" aria-hidden="true" tabindex="-1"></a>Repete um bloco enquanto uma condição for verdadeira.</span>
+<span id="cb103-450"><a href="#cb103-450" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Comparação: `for` vs `apply` vs `sapply`</span></span>
 <span id="cb103-451"><a href="#cb103-451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-454"><a href="#cb103-454" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-455"><a href="#cb103-455" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando crescimento até atingir valor alvo</span></span>
-<span id="cb103-456"><a href="#cb103-456" aria-hidden="true" tabindex="-1"></a>media_simulada <span class="ot">&lt;-</span> <span class="fl">5.0</span></span>
-<span id="cb103-457"><a href="#cb103-457" aria-hidden="true" tabindex="-1"></a>incremento     <span class="ot">&lt;-</span> <span class="fl">0.3</span></span>
-<span id="cb103-458"><a href="#cb103-458" aria-hidden="true" tabindex="-1"></a>iteracoes      <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb103-459"><a href="#cb103-459" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-460"><a href="#cb103-460" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (media_simulada <span class="sc">&lt;</span> <span class="dv">7</span>) {</span>
-<span id="cb103-461"><a href="#cb103-461" aria-hidden="true" tabindex="-1"></a>  media_simulada <span class="ot">&lt;-</span> media_simulada <span class="sc">+</span> incremento</span>
-<span id="cb103-462"><a href="#cb103-462" aria-hidden="true" tabindex="-1"></a>  iteracoes      <span class="ot">&lt;-</span> iteracoes <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb103-463"><a href="#cb103-463" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb103-464"><a href="#cb103-464" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-465"><a href="#cb103-465" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Média final:"</span>, <span class="fu">round</span>(media_simulada, <span class="dv">2</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb103-466"><a href="#cb103-466" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Iterações necessárias:"</span>, iteracoes, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb103-467"><a href="#cb103-467" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-468"><a href="#cb103-468" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-469"><a href="#cb103-469" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb103-452"><a href="#cb103-452" aria-hidden="true" tabindex="-1"></a>A aula destacou que, para operações sobre colunas de data frames, <span class="in">`apply`</span> e <span class="in">`sapply`</span> são mais concisos e geralmente mais eficientes do que laços <span class="in">`for`</span> explícitos.</span>
+<span id="cb103-453"><a href="#cb103-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-456"><a href="#cb103-456" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-457"><a href="#cb103-457" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando for</span></span>
+<span id="cb103-458"><a href="#cb103-458" aria-hidden="true" tabindex="-1"></a>medias_for <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">ncol</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]))</span>
+<span id="cb103-459"><a href="#cb103-459" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>])) {</span>
+<span id="cb103-460"><a href="#cb103-460" aria-hidden="true" tabindex="-1"></a>  medias_for[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>][, i])</span>
+<span id="cb103-461"><a href="#cb103-461" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb103-462"><a href="#cb103-462" aria-hidden="true" tabindex="-1"></a>medias_for</span>
+<span id="cb103-463"><a href="#cb103-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-464"><a href="#cb103-464" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando apply</span></span>
+<span id="cb103-465"><a href="#cb103-465" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">2</span>, mean)</span>
+<span id="cb103-466"><a href="#cb103-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-467"><a href="#cb103-467" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando sapply</span></span>
+<span id="cb103-468"><a href="#cb103-468" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], mean)</span>
+<span id="cb103-469"><a href="#cb103-469" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb103-470"><a href="#cb103-470" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-471"><a href="#cb103-471" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Comparação: `for` vs `apply` vs `sapply`</span></span>
+<span id="cb103-471"><a href="#cb103-471" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-472"><a href="#cb103-472" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-473"><a href="#cb103-473" aria-hidden="true" tabindex="-1"></a>A aula destacou que, para operações sobre colunas de data frames, <span class="in">`apply`</span> e <span class="in">`sapply`</span> são mais concisos e geralmente mais eficientes do que laços <span class="in">`for`</span> explícitos.</span>
+<span id="cb103-473"><a href="#cb103-473" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔍 Resultados e Discussão</span></span>
 <span id="cb103-474"><a href="#cb103-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-477"><a href="#cb103-477" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-478"><a href="#cb103-478" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando for</span></span>
-<span id="cb103-479"><a href="#cb103-479" aria-hidden="true" tabindex="-1"></a>medias_for <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">ncol</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]))</span>
-<span id="cb103-480"><a href="#cb103-480" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>])) {</span>
-<span id="cb103-481"><a href="#cb103-481" aria-hidden="true" tabindex="-1"></a>  medias_for[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>][, i])</span>
-<span id="cb103-482"><a href="#cb103-482" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb103-483"><a href="#cb103-483" aria-hidden="true" tabindex="-1"></a>medias_for</span>
-<span id="cb103-484"><a href="#cb103-484" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-485"><a href="#cb103-485" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando apply</span></span>
-<span id="cb103-486"><a href="#cb103-486" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">2</span>, mean)</span>
-<span id="cb103-487"><a href="#cb103-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-488"><a href="#cb103-488" aria-hidden="true" tabindex="-1"></a><span class="co"># Usando sapply</span></span>
-<span id="cb103-489"><a href="#cb103-489" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], mean)</span>
-<span id="cb103-490"><a href="#cb103-490" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-491"><a href="#cb103-491" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-492"><a href="#cb103-492" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-493"><a href="#cb103-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-494"><a href="#cb103-494" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔍 Resultados e Discussão</span></span>
+<span id="cb103-475"><a href="#cb103-475" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aplicação ao data frame de notas</span></span>
+<span id="cb103-476"><a href="#cb103-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-477"><a href="#cb103-477" aria-hidden="true" tabindex="-1"></a>Com o data frame didático, foi possível demonstrar o fluxo completo de uma análise: criação da estrutura de dados, cálculo de estatísticas, filtragem e classificação dos alunos.</span>
+<span id="cb103-478"><a href="#cb103-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-481"><a href="#cb103-481" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-482"><a href="#cb103-482" aria-hidden="true" tabindex="-1"></a><span class="co"># Recriando o data frame completo</span></span>
+<span id="cb103-483"><a href="#cb103-483" aria-hidden="true" tabindex="-1"></a>notas  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">6.5</span>, <span class="fl">9.0</span>, <span class="fl">5.5</span>)</span>
+<span id="cb103-484"><a href="#cb103-484" aria-hidden="true" tabindex="-1"></a>alunos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Bruno"</span>, <span class="st">"Carlos"</span>, <span class="st">"Daniela"</span>, <span class="st">"Eduardo"</span>)</span>
+<span id="cb103-485"><a href="#cb103-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-486"><a href="#cb103-486" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb103-487"><a href="#cb103-487" aria-hidden="true" tabindex="-1"></a>  <span class="at">aluno       =</span> alunos,</span>
+<span id="cb103-488"><a href="#cb103-488" aria-hidden="true" tabindex="-1"></a>  <span class="at">matematica  =</span> notas,</span>
+<span id="cb103-489"><a href="#cb103-489" aria-hidden="true" tabindex="-1"></a>  <span class="at">estatistica =</span> <span class="fu">c</span>(<span class="fl">8.0</span>, <span class="fl">7.5</span>, <span class="fl">6.0</span>, <span class="fl">9.5</span>, <span class="fl">6.0</span>),</span>
+<span id="cb103-490"><a href="#cb103-490" aria-hidden="true" tabindex="-1"></a>  <span class="at">programacao =</span> <span class="fu">c</span>(<span class="fl">7.0</span>, <span class="fl">8.5</span>, <span class="fl">7.0</span>, <span class="fl">9.0</span>, <span class="fl">5.0</span>)</span>
+<span id="cb103-491"><a href="#cb103-491" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb103-492"><a href="#cb103-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-493"><a href="#cb103-493" aria-hidden="true" tabindex="-1"></a><span class="co"># Média geral por aluno</span></span>
+<span id="cb103-494"><a href="#cb103-494" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>media <span class="ot">&lt;-</span> <span class="fu">apply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">1</span>, mean)</span>
 <span id="cb103-495"><a href="#cb103-495" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-496"><a href="#cb103-496" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aplicação ao data frame de notas</span></span>
-<span id="cb103-497"><a href="#cb103-497" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-498"><a href="#cb103-498" aria-hidden="true" tabindex="-1"></a>Com o data frame didático, foi possível demonstrar o fluxo completo de uma análise: criação da estrutura de dados, cálculo de estatísticas, filtragem e classificação dos alunos.</span>
-<span id="cb103-499"><a href="#cb103-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-502"><a href="#cb103-502" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-503"><a href="#cb103-503" aria-hidden="true" tabindex="-1"></a><span class="co"># Recriando o data frame completo</span></span>
-<span id="cb103-504"><a href="#cb103-504" aria-hidden="true" tabindex="-1"></a>notas  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">6.5</span>, <span class="fl">9.0</span>, <span class="fl">5.5</span>)</span>
-<span id="cb103-505"><a href="#cb103-505" aria-hidden="true" tabindex="-1"></a>alunos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ana"</span>, <span class="st">"Bruno"</span>, <span class="st">"Carlos"</span>, <span class="st">"Daniela"</span>, <span class="st">"Eduardo"</span>)</span>
-<span id="cb103-506"><a href="#cb103-506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-507"><a href="#cb103-507" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb103-508"><a href="#cb103-508" aria-hidden="true" tabindex="-1"></a>  <span class="at">aluno       =</span> alunos,</span>
-<span id="cb103-509"><a href="#cb103-509" aria-hidden="true" tabindex="-1"></a>  <span class="at">matematica  =</span> notas,</span>
-<span id="cb103-510"><a href="#cb103-510" aria-hidden="true" tabindex="-1"></a>  <span class="at">estatistica =</span> <span class="fu">c</span>(<span class="fl">8.0</span>, <span class="fl">7.5</span>, <span class="fl">6.0</span>, <span class="fl">9.5</span>, <span class="fl">6.0</span>),</span>
-<span id="cb103-511"><a href="#cb103-511" aria-hidden="true" tabindex="-1"></a>  <span class="at">programacao =</span> <span class="fu">c</span>(<span class="fl">7.0</span>, <span class="fl">8.5</span>, <span class="fl">7.0</span>, <span class="fl">9.0</span>, <span class="fl">5.0</span>)</span>
-<span id="cb103-512"><a href="#cb103-512" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb103-513"><a href="#cb103-513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-514"><a href="#cb103-514" aria-hidden="true" tabindex="-1"></a><span class="co"># Média geral por aluno</span></span>
-<span id="cb103-515"><a href="#cb103-515" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>media <span class="ot">&lt;-</span> <span class="fu">apply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">1</span>, mean)</span>
+<span id="cb103-496"><a href="#cb103-496" aria-hidden="true" tabindex="-1"></a><span class="co"># Situação</span></span>
+<span id="cb103-497"><a href="#cb103-497" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>situacao <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dados<span class="sc">$</span>media <span class="sc">&gt;=</span> <span class="dv">7</span>, <span class="st">"Aprovado"</span>, <span class="st">"Reprovado"</span>)</span>
+<span id="cb103-498"><a href="#cb103-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-499"><a href="#cb103-499" aria-hidden="true" tabindex="-1"></a>dados</span>
+<span id="cb103-500"><a href="#cb103-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-501"><a href="#cb103-501" aria-hidden="true" tabindex="-1"></a><span class="co"># Disciplina com maior média</span></span>
+<span id="cb103-502"><a href="#cb103-502" aria-hidden="true" tabindex="-1"></a>medias_disc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], mean)</span>
+<span id="cb103-503"><a href="#cb103-503" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Disciplina com maior média:"</span>, <span class="fu">names</span>(<span class="fu">which.max</span>(medias_disc)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb103-504"><a href="#cb103-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-505"><a href="#cb103-505" aria-hidden="true" tabindex="-1"></a><span class="co"># Alunos aprovados</span></span>
+<span id="cb103-506"><a href="#cb103-506" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Alunos aprovados:"</span>, <span class="fu">sum</span>(dados<span class="sc">$</span>situacao <span class="sc">==</span> <span class="st">"Aprovado"</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb103-507"><a href="#cb103-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-508"><a href="#cb103-508" aria-hidden="true" tabindex="-1"></a><span class="co"># Alunos acima da média geral</span></span>
+<span id="cb103-509"><a href="#cb103-509" aria-hidden="true" tabindex="-1"></a>media_geral <span class="ot">&lt;-</span> <span class="fu">mean</span>(dados<span class="sc">$</span>media)</span>
+<span id="cb103-510"><a href="#cb103-510" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(dados, media <span class="sc">&gt;</span> media_geral)</span>
+<span id="cb103-511"><a href="#cb103-511" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-512"><a href="#cb103-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-513"><a href="#cb103-513" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-514"><a href="#cb103-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-515"><a href="#cb103-515" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aplicação ao dataset `penguins`</span></span>
 <span id="cb103-516"><a href="#cb103-516" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-517"><a href="#cb103-517" aria-hidden="true" tabindex="-1"></a><span class="co"># Situação</span></span>
-<span id="cb103-518"><a href="#cb103-518" aria-hidden="true" tabindex="-1"></a>dados<span class="sc">$</span>situacao <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(dados<span class="sc">$</span>media <span class="sc">&gt;=</span> <span class="dv">7</span>, <span class="st">"Aprovado"</span>, <span class="st">"Reprovado"</span>)</span>
-<span id="cb103-519"><a href="#cb103-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-520"><a href="#cb103-520" aria-hidden="true" tabindex="-1"></a>dados</span>
-<span id="cb103-521"><a href="#cb103-521" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-522"><a href="#cb103-522" aria-hidden="true" tabindex="-1"></a><span class="co"># Disciplina com maior média</span></span>
-<span id="cb103-523"><a href="#cb103-523" aria-hidden="true" tabindex="-1"></a>medias_disc <span class="ot">&lt;-</span> <span class="fu">sapply</span>(dados[, <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], mean)</span>
-<span id="cb103-524"><a href="#cb103-524" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Disciplina com maior média:"</span>, <span class="fu">names</span>(<span class="fu">which.max</span>(medias_disc)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb103-525"><a href="#cb103-525" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-526"><a href="#cb103-526" aria-hidden="true" tabindex="-1"></a><span class="co"># Alunos aprovados</span></span>
-<span id="cb103-527"><a href="#cb103-527" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Alunos aprovados:"</span>, <span class="fu">sum</span>(dados<span class="sc">$</span>situacao <span class="sc">==</span> <span class="st">"Aprovado"</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb103-528"><a href="#cb103-528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-529"><a href="#cb103-529" aria-hidden="true" tabindex="-1"></a><span class="co"># Alunos acima da média geral</span></span>
-<span id="cb103-530"><a href="#cb103-530" aria-hidden="true" tabindex="-1"></a>media_geral <span class="ot">&lt;-</span> <span class="fu">mean</span>(dados<span class="sc">$</span>media)</span>
-<span id="cb103-531"><a href="#cb103-531" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(dados, media <span class="sc">&gt;</span> media_geral)</span>
-<span id="cb103-532"><a href="#cb103-532" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-533"><a href="#cb103-533" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-534"><a href="#cb103-534" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb103-517"><a href="#cb103-517" aria-hidden="true" tabindex="-1"></a>O dataset <span class="in">`penguins`</span> contém 344 observações de pinguins coletadas no arquipélago Palmer, Antártica, com 8 variáveis — 3 categóricas (<span class="in">`species`</span>, <span class="in">`island`</span>, <span class="in">`sex`</span>) e 5 numéricas (<span class="in">`bill_length_mm`</span>, <span class="in">`bill_depth_mm`</span>, <span class="in">`flipper_length_mm`</span>, <span class="in">`body_mass_g`</span>, <span class="in">`year`</span>).</span>
+<span id="cb103-518"><a href="#cb103-518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-521"><a href="#cb103-521" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb103-522"><a href="#cb103-522" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb103-523"><a href="#cb103-523" aria-hidden="true" tabindex="-1"></a>dados_limpos <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguins)</span>
+<span id="cb103-524"><a href="#cb103-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-525"><a href="#cb103-525" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Observações após remoção de NAs:"</span>, <span class="fu">nrow</span>(dados_limpos), <span class="st">"de"</span>, <span class="fu">nrow</span>(penguins), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb103-526"><a href="#cb103-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-527"><a href="#cb103-527" aria-hidden="true" tabindex="-1"></a><span class="co"># Massa média por espécie</span></span>
+<span id="cb103-528"><a href="#cb103-528" aria-hidden="true" tabindex="-1"></a>medias_especie <span class="ot">&lt;-</span> <span class="fu">tapply</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
+<span id="cb103-529"><a href="#cb103-529" aria-hidden="true" tabindex="-1"></a>                         dados_limpos<span class="sc">$</span>species,</span>
+<span id="cb103-530"><a href="#cb103-530" aria-hidden="true" tabindex="-1"></a>                         mean)</span>
+<span id="cb103-531"><a href="#cb103-531" aria-hidden="true" tabindex="-1"></a>medias_especie</span>
+<span id="cb103-532"><a href="#cb103-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-533"><a href="#cb103-533" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Espécie com maior massa média:"</span>,</span>
+<span id="cb103-534"><a href="#cb103-534" aria-hidden="true" tabindex="-1"></a>    <span class="fu">names</span>(<span class="fu">which.max</span>(medias_especie)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
 <span id="cb103-535"><a href="#cb103-535" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-536"><a href="#cb103-536" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aplicação ao dataset `penguins`</span></span>
-<span id="cb103-537"><a href="#cb103-537" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-538"><a href="#cb103-538" aria-hidden="true" tabindex="-1"></a>O dataset <span class="in">`penguins`</span> contém 344 observações de pinguins coletadas no arquipélago Palmer, Antártica, com 8 variáveis — 3 categóricas (<span class="in">`species`</span>, <span class="in">`island`</span>, <span class="in">`sex`</span>) e 5 numéricas (<span class="in">`bill_length_mm`</span>, <span class="in">`bill_depth_mm`</span>, <span class="in">`flipper_length_mm`</span>, <span class="in">`body_mass_g`</span>, <span class="in">`year`</span>).</span>
-<span id="cb103-539"><a href="#cb103-539" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-542"><a href="#cb103-542" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb103-543"><a href="#cb103-543" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb103-544"><a href="#cb103-544" aria-hidden="true" tabindex="-1"></a>dados_limpos <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguins)</span>
+<span id="cb103-536"><a href="#cb103-536" aria-hidden="true" tabindex="-1"></a><span class="co"># Combinação espécie + sexo com maior massa média</span></span>
+<span id="cb103-537"><a href="#cb103-537" aria-hidden="true" tabindex="-1"></a>medias_grupo <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(body_mass_g <span class="sc">~</span> species <span class="sc">+</span> sex,</span>
+<span id="cb103-538"><a href="#cb103-538" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> dados_limpos,</span>
+<span id="cb103-539"><a href="#cb103-539" aria-hidden="true" tabindex="-1"></a>                          mean)</span>
+<span id="cb103-540"><a href="#cb103-540" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-541"><a href="#cb103-541" aria-hidden="true" tabindex="-1"></a>medias_grupo[<span class="fu">which.max</span>(medias_grupo<span class="sc">$</span>body_mass_g), ]</span>
+<span id="cb103-542"><a href="#cb103-542" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb103-543"><a href="#cb103-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-544"><a href="#cb103-544" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb103-545"><a href="#cb103-545" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-546"><a href="#cb103-546" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Observações após remoção de NAs:"</span>, <span class="fu">nrow</span>(dados_limpos), <span class="st">"de"</span>, <span class="fu">nrow</span>(penguins), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb103-546"><a href="#cb103-546" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🧠 Considerações Finais</span></span>
 <span id="cb103-547"><a href="#cb103-547" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-548"><a href="#cb103-548" aria-hidden="true" tabindex="-1"></a><span class="co"># Massa média por espécie</span></span>
-<span id="cb103-549"><a href="#cb103-549" aria-hidden="true" tabindex="-1"></a>medias_especie <span class="ot">&lt;-</span> <span class="fu">tapply</span>(dados_limpos<span class="sc">$</span>body_mass_g,</span>
-<span id="cb103-550"><a href="#cb103-550" aria-hidden="true" tabindex="-1"></a>                         dados_limpos<span class="sc">$</span>species,</span>
-<span id="cb103-551"><a href="#cb103-551" aria-hidden="true" tabindex="-1"></a>                         mean)</span>
-<span id="cb103-552"><a href="#cb103-552" aria-hidden="true" tabindex="-1"></a>medias_especie</span>
-<span id="cb103-553"><a href="#cb103-553" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-554"><a href="#cb103-554" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Espécie com maior massa média:"</span>,</span>
-<span id="cb103-555"><a href="#cb103-555" aria-hidden="true" tabindex="-1"></a>    <span class="fu">names</span>(<span class="fu">which.max</span>(medias_especie)), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb103-556"><a href="#cb103-556" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-557"><a href="#cb103-557" aria-hidden="true" tabindex="-1"></a><span class="co"># Combinação espécie + sexo com maior massa média</span></span>
-<span id="cb103-558"><a href="#cb103-558" aria-hidden="true" tabindex="-1"></a>medias_grupo <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(body_mass_g <span class="sc">~</span> species <span class="sc">+</span> sex,</span>
-<span id="cb103-559"><a href="#cb103-559" aria-hidden="true" tabindex="-1"></a>                          <span class="at">data =</span> dados_limpos,</span>
-<span id="cb103-560"><a href="#cb103-560" aria-hidden="true" tabindex="-1"></a>                          mean)</span>
-<span id="cb103-561"><a href="#cb103-561" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-562"><a href="#cb103-562" aria-hidden="true" tabindex="-1"></a>medias_grupo[<span class="fu">which.max</span>(medias_grupo<span class="sc">$</span>body_mass_g), ]</span>
-<span id="cb103-563"><a href="#cb103-563" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb103-564"><a href="#cb103-564" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-565"><a href="#cb103-565" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-566"><a href="#cb103-566" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-567"><a href="#cb103-567" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🧠 Considerações Finais</span></span>
-<span id="cb103-568"><a href="#cb103-568" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-569"><a href="#cb103-569" aria-hidden="true" tabindex="-1"></a>A Aula 04 demonstrou que o Base R oferece um conjunto rico e expressivo de ferramentas para manipulação de dados, dispensando pacotes externos para a maioria das tarefas analíticas cotidianas.</span>
-<span id="cb103-570"><a href="#cb103-570" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-571"><a href="#cb103-571" aria-hidden="true" tabindex="-1"></a>Os principais aprendizados foram:</span>
-<span id="cb103-572"><a href="#cb103-572" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-573"><a href="#cb103-573" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A **família `apply`** (<span class="in">`apply`</span>, <span class="in">`lapply`</span>, <span class="in">`sapply`</span>, <span class="in">`tapply`</span>) permite substituir laços explícitos por código mais conciso e idiomático</span>
-<span id="cb103-574"><a href="#cb103-574" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>As funções <span class="in">`with()`</span> e <span class="in">`within()`</span> melhoram a legibilidade do código ao evitar a repetição do nome do data frame</span>
-<span id="cb103-575"><a href="#cb103-575" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`by()`</span>, <span class="in">`tapply()`</span> e <span class="in">`aggregate()`</span> são complementares: <span class="in">`tapply`</span> retorna arrays, <span class="in">`by`</span> é mais geral para agrupamentos complexos, e <span class="in">`aggregate`</span> retorna data frames prontos para uso</span>
-<span id="cb103-576"><a href="#cb103-576" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`ave()`</span> é especialmente útil para comparar cada observação com a estatística do seu próprio grupo, mantendo o vetor no mesmo tamanho dos dados originais</span>
-<span id="cb103-577"><a href="#cb103-577" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`split()`</span> combinado com <span class="in">`lapply()`</span> oferece uma abordagem flexível para operações por grupo</span>
-<span id="cb103-578"><a href="#cb103-578" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>As estruturas de controle (<span class="in">`if`</span>, <span class="in">`for`</span>, <span class="in">`while`</span>) são fundamentais, mas a aula evidenciou que **abordagens vetorizadas são preferíveis** sempre que possível, por serem mais concisas e eficientes</span>
-<span id="cb103-579"><a href="#cb103-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-580"><a href="#cb103-580" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb103-581"><a href="#cb103-581" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-582"><a href="#cb103-582" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📖 Referências</span></span>
+<span id="cb103-548"><a href="#cb103-548" aria-hidden="true" tabindex="-1"></a>A Aula 04 demonstrou que o Base R oferece um conjunto rico e expressivo de ferramentas para manipulação de dados, dispensando pacotes externos para a maioria das tarefas analíticas cotidianas.</span>
+<span id="cb103-549"><a href="#cb103-549" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-550"><a href="#cb103-550" aria-hidden="true" tabindex="-1"></a>Os principais aprendizados foram:</span>
+<span id="cb103-551"><a href="#cb103-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-552"><a href="#cb103-552" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A **família `apply`** (<span class="in">`apply`</span>, <span class="in">`lapply`</span>, <span class="in">`sapply`</span>, <span class="in">`tapply`</span>) permite substituir laços explícitos por código mais conciso e idiomático</span>
+<span id="cb103-553"><a href="#cb103-553" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>As funções <span class="in">`with()`</span> e <span class="in">`within()`</span> melhoram a legibilidade do código ao evitar a repetição do nome do data frame</span>
+<span id="cb103-554"><a href="#cb103-554" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`by()`</span>, <span class="in">`tapply()`</span> e <span class="in">`aggregate()`</span> são complementares: <span class="in">`tapply`</span> retorna arrays, <span class="in">`by`</span> é mais geral para agrupamentos complexos, e <span class="in">`aggregate`</span> retorna data frames prontos para uso</span>
+<span id="cb103-555"><a href="#cb103-555" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`ave()`</span> é especialmente útil para comparar cada observação com a estatística do seu próprio grupo, mantendo o vetor no mesmo tamanho dos dados originais</span>
+<span id="cb103-556"><a href="#cb103-556" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`split()`</span> combinado com <span class="in">`lapply()`</span> oferece uma abordagem flexível para operações por grupo</span>
+<span id="cb103-557"><a href="#cb103-557" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>As estruturas de controle (<span class="in">`if`</span>, <span class="in">`for`</span>, <span class="in">`while`</span>) são fundamentais, mas a aula evidenciou que **abordagens vetorizadas são preferíveis** sempre que possível, por serem mais concisas e eficientes</span>
+<span id="cb103-558"><a href="#cb103-558" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-559"><a href="#cb103-559" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb103-560"><a href="#cb103-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-561"><a href="#cb103-561" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📖 Referências</span></span>
 </code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
